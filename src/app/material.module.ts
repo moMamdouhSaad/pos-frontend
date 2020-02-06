@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
@@ -10,9 +11,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   imports: [
     CommonModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDividerModule
 
   ],
-  exports:[MatButtonModule,MatToolbarModule]
+  exports:[MatButtonModule,MatToolbarModule,MatDividerModule]
 })
 export class MaterialModule { }
