@@ -6,7 +6,11 @@ const routes : Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
-  } 
+  } ,
+  {
+    path:'takeaway',
+    loadChildren:'../takeaway/takeaway.module#TakeawayModule'
+  }
 ]
 
 @NgModule({
