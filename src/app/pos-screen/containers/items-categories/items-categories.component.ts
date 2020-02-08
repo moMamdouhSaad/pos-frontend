@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PosScreenFacade } from '../../pos-screen-facade';
 
 @Component({
   selector: 'app-items-categories',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemsCategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private posScreenFacade:PosScreenFacade) {}
 
   ngOnInit() {
+    this.posScreenFacade.loadCategories();
+    
   }
 
 }
