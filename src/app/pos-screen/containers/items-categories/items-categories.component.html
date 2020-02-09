@@ -1,9 +1,17 @@
 <div class="container-fluid h-100">
     <div class="row h-100">
-        <app-categories [categories]="posScreenFacade.getCategories$()"
+        <app-categories 
+        [categories]="posScreenFacade.getCategories$()"
+        [selectedCategory]="posScreenFacade.getSelectedCategory$()"
+        (onCategoryClicked)=posScreenFacade.getProductsByCategoryId($event)
          class="col-sm-2" style="border:1px black dashed">
          </app-categories>
-        <app-items class="col-sm-10" style="border:1px blue dashed"></app-items>
+
+        <app-items 
+        [products]="posScreenFacade.getCurrentProducts$()"
+        (onItemClicked) = "itemClicked($event)"
+        class="col-sm-10" style="border:1px blue dashed">
+        </app-items>
     </div>
 </div>
 

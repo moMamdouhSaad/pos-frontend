@@ -7,8 +7,11 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <app-bill-body-item>
-            </app-bill-body-item>
+<ng-container *ngFor = " let item of billItems$ | async">
+    <app-bill-body-item [item]="item">
+    </app-bill-body-item>
+</ng-container>
+
         </div>
     </div>
 </div>

@@ -11,5 +11,7 @@ export class TakeawayComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  addItemToBill($event){
+    console.log($event)
+  }
 }

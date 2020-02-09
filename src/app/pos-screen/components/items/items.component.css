@@ -1,0 +1,12 @@
+.item-btn{
+    background-color: rgba(33, 122, 33, 0.959);
+    color:white;
+    margin-right:5px;
+    margin-bottom:3px;
+    width:calc(25% - 5px);
+    height:50px
+}
+
+.item-btns-container{
+    padding:5px
+}

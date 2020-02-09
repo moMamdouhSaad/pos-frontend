@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CategoriesResponse } from 'src/app/models/category';
+import { ItemsResponse } from 'src/app/models/item';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,12 @@ export class CategoriesAndItemsApiService {
 
   constructor(private http :HttpClient) { }
 
-  getAllCategories():Observable<CategoriesResponse>{   // TODO : make an interface to categories 
+  getAllCategories():Observable<CategoriesResponse>{   
     return this.http.get<CategoriesResponse>(this.categoryAPI)
+  }
+
+  getAllProducts():Observable<ItemsResponse>{
+    return this.http.get<ItemsResponse>(this.productAPI)
   }
 
 

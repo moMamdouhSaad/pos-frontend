@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { PosScreenFacade } from '../../pos-screen-facade';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CategoriesAndItemsFacade } from '../../categoriesAndItems-facade';
 
 @Component({
   selector: 'app-items-categories',
@@ -8,11 +8,16 @@ import { PosScreenFacade } from '../../pos-screen-facade';
 })
 export class ItemsCategoriesComponent implements OnInit {
 
-  constructor(private posScreenFacade:PosScreenFacade) {}
+  constructor(private posScreenFacade:CategoriesAndItemsFacade) {}
+  @Output() onItemClicked = new EventEmitter<{product_name:string,product_price:number}>();
 
   ngOnInit() {
     this.posScreenFacade.loadCategories();
-    
+    this.posScreenFacade.loadProducts();
+  }
+
+  itemClicked(item){
+    this.onItemClicked.next(item)
   }
 
 }

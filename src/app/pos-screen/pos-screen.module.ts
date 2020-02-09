@@ -10,15 +10,16 @@ import { BillBodyItemComponent } from './components/bill/bill-body-item/bill-bod
 import { ItemsCategoriesComponent } from './containers/items-categories/items-categories.component';
 import { ItemsComponent } from './components/items/items.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { PosScreenComponent } from './containers/pos-screen/pos-screen.component';
 
 
 
 @NgModule({
-  declarations: [BillComponent, ItemsComponent, CategoriesComponent, BillHeaderComponent, BillFooterComponent, BillBodyComponent, BillOptionComponent, BillBodyItemComponent, ItemsCategoriesComponent],
+  declarations: [BillComponent, ItemsComponent, CategoriesComponent, BillHeaderComponent, BillFooterComponent, BillBodyComponent, BillOptionComponent, BillBodyItemComponent, ItemsCategoriesComponent, PosScreenComponent],
   imports: [
     CommonModule,
     MaterialModule
   ],
-  exports:[BillComponent,ItemsCategoriesComponent]
+  exports:[PosScreenComponent]
 })
 export class PosScreenModule { }

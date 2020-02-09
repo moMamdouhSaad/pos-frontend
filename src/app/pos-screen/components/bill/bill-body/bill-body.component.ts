@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-bill-body',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bill-body.component.css']
 })
 export class BillBodyComponent implements OnInit {
-
+  @Input("billItems") billItems$:Observable<{product_name:string,product_price:number}[]>
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BillFacade } from '../../bill-facade';
 
 @Component({
   selector: 'app-bill',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillComponent implements OnInit {
 
-  constructor() { }
+  constructor(private billFacade:BillFacade) { }
 
   ngOnInit() {
   }
