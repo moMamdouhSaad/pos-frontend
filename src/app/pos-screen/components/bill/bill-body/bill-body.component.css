@@ -1,4 +1,10 @@
 .container-fluid{
     height:calc(80% - 180px);
     overflow-y: auto;
+    position:relative; 
+}
+
+.bottom {
+    position:absolute;
+    bottom: 0;
 }

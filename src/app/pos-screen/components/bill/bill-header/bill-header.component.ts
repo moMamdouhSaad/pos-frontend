@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-bill-header',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bill-header.component.css']
 })
 export class BillHeaderComponent implements OnInit {
+  @Input() orderType:Observable<string>
 
   constructor() { }
 

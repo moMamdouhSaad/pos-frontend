@@ -8,16 +8,16 @@ import { CategoriesAndItemsFacade } from '../../categoriesAndItems-facade';
 })
 export class ItemsCategoriesComponent implements OnInit {
 
-  constructor(private posScreenFacade:CategoriesAndItemsFacade) {}
+  constructor(private categoriesAndItemsFacade:CategoriesAndItemsFacade) {}
   @Output() onItemClicked = new EventEmitter<{product_name:string,product_price:number}>();
 
   ngOnInit() {
-    this.posScreenFacade.loadCategories();
-    this.posScreenFacade.loadProducts();
+    this.categoriesAndItemsFacade.loadCategories();
+    this.categoriesAndItemsFacade.loadProducts();
   }
 
   itemClicked(item){
-    this.onItemClicked.next(item)
+    this.onItemClicked.emit(item);
   }
 
 }

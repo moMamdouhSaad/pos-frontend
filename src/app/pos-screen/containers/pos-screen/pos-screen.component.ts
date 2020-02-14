@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BillFacade } from '../../bill-facade';
 
 @Component({
@@ -7,14 +7,14 @@ import { BillFacade } from '../../bill-facade';
   styleUrls: ['./pos-screen.component.css']
 })
 export class PosScreenComponent implements OnInit {
+@Input() orderType:string;
 
   constructor(private billFacade:BillFacade) { }
 
   ngOnInit() {
+    this.billFacade.setOrderType(this.orderType);
   }
 
-  addItemToBill($event){
-    console.log($event)
-  }
+  
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { CategoriesAndItemsApiService } from './services/categories-and-items-api.service';
-import { tap,map, pluck } from 'rxjs/operators';
+import { tap,map } from 'rxjs/operators';
 import { CategoriesAndItemsStateService } from './state/categories-and-items-state.service';
 import { Observable } from 'rxjs';
 import { Category } from '../models/category';

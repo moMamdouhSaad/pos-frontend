@@ -1,7 +1,12 @@
-<app-bill-header></app-bill-header>
+<app-bill-header [orderType]="billFacade.getOrderType$()"></app-bill-header>
 <mat-divider></mat-divider>
-<app-bill-body [billItems]="billFacade.getBillItems$()"></app-bill-body>
+<app-bill-body 
+[billItems]="billFacade.getBillItems$()"></app-bill-body>
 <mat-divider></mat-divider>
-<app-bill-footer></app-bill-footer>
+<app-bill-footer 
+[subTotal]="billFacade.getBillSubTotal$()"
+[taxRate]="billFacade.getTaxRate$()"
+[total]="billFacade.getBillTotal$()">
+</app-bill-footer>
 <mat-divider></mat-divider>
 <app-bill-option></app-bill-option>

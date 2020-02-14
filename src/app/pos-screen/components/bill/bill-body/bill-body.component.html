@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container-fluid "style="border:2px red solid">
     <div class="row">
         <div class="col-sm-8"> Item name</div>
         <div class="col-sm-2"> Qty</div>
@@ -7,11 +7,14 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-<ng-container *ngFor = " let item of billItems$ | async">
+<ng-container *ngFor = " let item of billItems$ | async | slice : start  : start +  5  ">
     <app-bill-body-item [item]="item">
     </app-bill-body-item>
 </ng-container>
-
-        </div>
+    </div>   
+    </div>
+    <div class="row bottom col-sm-12" >
+        <button class="col-6" (click)="downBtnClicked()" mat-flat-button>Down</button>
+        <button class="col-6" (click)="upBtnClicked()"  mat-flat-button>UP</button>
     </div>
 </div>

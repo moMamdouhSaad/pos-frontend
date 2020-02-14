@@ -1,18 +1,18 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-6">Tax</div>
-        <div class="col-6 float-right" style="text-align:right">120</div>
+        <div class="col-6 float-right" style="text-align:right">{{taxRate$ | async}}</div>
     </div>
     <div class="row">
         <div class="col-sm-6">Service</div>
-        <div class="col-sm-6" style="text-align:right">500</div>
+        <div class="col-sm-6" style="text-align:right">---</div>
     </div>
     <div class="row">
         <div class="col-sm-6">SubTotal</div>
-        <div class="col-sm-6 " style="text-align:right">250</div>
+        <div class="col-sm-6 " style="text-align:right">{{subTotal$ | async}}</div>
     </div>
     <div class="row">
         <div class="col-sm-6">Total</div>
-        <div class="col-sm-6" style="text-align:right">500</div>
+        <div class="col-sm-6" style="text-align:right">{{total$ | async}}</div>
     </div>
 </div>
