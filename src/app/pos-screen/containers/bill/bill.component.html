@@ -1,7 +1,8 @@
-<app-bill-header [orderType]="billFacade.getOrderType$()"></app-bill-header>
+<app-bill-header [orderType]="billFacade.getOrderType$()" [tableNo]="billFacade.getTableNumber$()"></app-bill-header>
 <mat-divider></mat-divider>
 <app-bill-body 
-[billItems]="billFacade.getBillItems$()"></app-bill-body>
+[billItems]="billFacade.getBillItems$()">
+</app-bill-body>
 <mat-divider></mat-divider>
 <app-bill-footer 
 [subTotal]="billFacade.getBillSubTotal$()"
@@ -9,4 +10,4 @@
 [total]="billFacade.getBillTotal$()">
 </app-bill-footer>
 <mat-divider></mat-divider>
-<app-bill-option></app-bill-option>
+<app-bill-option (onCash)="cashClicked()"></app-bill-option>

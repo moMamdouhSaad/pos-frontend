@@ -1,0 +1,9 @@
+<div class="container">
+
+    <ng-container *ngFor="let table of tableFacade.getAllTables$() | async">
+        <app-table-btn
+        (onTableClicked)="tableClicked($event)"
+         [table]='table  '></app-table-btn>
+    </ng-container>
+
+</div>

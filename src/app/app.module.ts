@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TakeawayModule } from './takeaway/takeaway.module';
+import { DineInModule } from './dine-in/dine-in.module';
 
 
 
@@ -23,6 +24,7 @@ import { TakeawayModule } from './takeaway/takeaway.module';
     CoreModule,
     HomeModule,
     TakeawayModule,
+    DineInModule
   ],
   providers: [],
   bootstrap: [AppComponent]

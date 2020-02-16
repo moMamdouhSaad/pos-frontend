@@ -10,6 +10,10 @@ const routes : Routes = [
   {
     path:'takeaway',
     loadChildren:'../takeaway/takeaway.module#TakeawayModule'
+  },
+  {
+    path:"dine-in",
+    loadChildren:'../dine-in/dine-in.module#DineInModule'
   }
 ]
 

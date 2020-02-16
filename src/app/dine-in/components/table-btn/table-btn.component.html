@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <button
+
+    (click)="goToTable(table.table_number)"
+    mat-flat-button
+     [ngClass] = "{'closed':table.status=='Closed',
+                  'printed':table.status=='Printed',
+                  'opened':table.status=='Opened'}">
+                   {{table.table_number}} 
+    </button>
+</div>

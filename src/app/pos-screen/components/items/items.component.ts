@@ -16,7 +16,7 @@ export class ItemsComponent implements OnInit {
   ngOnInit() {
   }
   itemClicked(item:Item){
-    const newItemObj = {product_name:item.product_name,product_price:item.product_price} ; //remove unneccasry properties such as category_id and product_id
+    const newItemObj = {product_name:item.product_name,product_price:item.product_price,product_id:item._id} ; //remove unneccasry properties such as category_id and product_id
     this.onItemClicked.emit(newItemObj)
   }
 

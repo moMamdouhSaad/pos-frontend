@@ -1,0 +1,20 @@
+.container-fluid{
+    display: inline;
+}
+.container-fluid button {
+    width:95px;
+    height: 75px;
+
+    margin-right:10px;
+    margin-bottom:10px;
+}
+
+.printed{
+    background-color: tomato;
+}
+.closed{
+    background-color: gainsboro;
+}
+.opened{
+    background-color: teal;
+}

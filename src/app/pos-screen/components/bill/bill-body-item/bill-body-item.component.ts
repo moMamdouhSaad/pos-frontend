@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./bill-body-item.component.css']
 })
 export class BillBodyItemComponent implements OnInit {
-@Input() item:{product_name:string,product_price:string};
+@Input() item:{product_name:string,product_price:string,product_id:string};
   constructor() { }
 
   ngOnInit() {

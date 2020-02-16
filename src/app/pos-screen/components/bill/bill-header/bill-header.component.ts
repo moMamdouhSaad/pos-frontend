@@ -8,7 +8,10 @@ import { Observable } from 'rxjs';
 })
 export class BillHeaderComponent implements OnInit {
   @Input() orderType:Observable<string>
+  @Input() tableNo:Observable<number>
 
+
+  
   constructor() { }
 
   ngOnInit() {
