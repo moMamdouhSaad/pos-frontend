@@ -10,4 +10,4 @@
 [total]="billFacade.getBillTotal$()">
 </app-bill-footer>
 <mat-divider></mat-divider>
-<app-bill-option (onCash)="cashClicked()"></app-bill-option>
+<app-bill-option (onStoreOrCashClicked)="saveBill($event)"></app-bill-option>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BillStateService } from './state/bill-state.service';
 import { BillApi } from './services/bill-api';
-import { tap, map, flatMap, concatMap } from "rxjs/operators"
+import { tap, map, flatMap, concatMap, filter } from "rxjs/operators"
 import { BillModel } from './models/Bill-model';
 import { ServerResponse } from '../models/ServerResponse';
 
@@ -53,6 +53,7 @@ billItems = [];
     }
 
     cashBill(bill:BillModel){
+        console.log(bill)
       return  this.billApi.cash(bill)
     }
     setTableNumber(tableNo:number){
@@ -65,11 +66,8 @@ billItems = [];
         this.billState.resetBillStates();
     }
     setItemsToBillByTableNo(tableNo:number){
-        this.billApi.getBillByTableNo(tableNo).pipe(map((x:any)=>x.response)).subscribe(data=>{
-            console.log(data)
-            console.log(data[0].lines)
+        this.billApi.getBillByTableNo(tableNo).pipe(map((x:any)=>x.response),filter(data=>data.length>0)).subscribe(data=>{
             this.billState.setBillItems(data[0].lines);
-            console.log(data.subtotal)
             this.billState.setBillSubTotal(data[0].subtotal)
             this.billState.setBillTotal(data[0].total)
         })

@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./bill-option.component.css']
 })
 export class BillOptionComponent implements OnInit {
-@Output() onCash = new EventEmitter<any>();
+@Output() onStoreOrCashClicked = new EventEmitter<any>();
 isBtnDisabled:boolean = false;
  
 constructor() { }
@@ -14,9 +14,9 @@ constructor() { }
 ngOnInit() {
   }
 
-cashClicked(){
+saveBill(billStatus:string){
   this.isBtnDisabled = true;
-  this.onCash.emit()
+  this.onStoreOrCashClicked.emit(billStatus)
 }
 
 }

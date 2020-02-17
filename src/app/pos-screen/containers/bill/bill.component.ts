@@ -19,32 +19,40 @@ export class BillComponent implements OnInit {
 
   ngOnInit() {
   }
-  cashClicked(){
+  saveBill(billStatus:string){
       let orderType : string;
       let lines : any ;
       let subTotal : number;
       let total : number;
       let taxRate : number;
-
+      let tableNo:number;
       this.billFacade.getOrderType$().subscribe(data=>orderType = data);
       this.billFacade.getTaxRate$().subscribe(data=>taxRate = data);
-      this.billFacade.getBillSubTotal$().subscribe(data=>subTotal = data)
-      this.billFacade.getBillTotal$().subscribe(data=>total = data)
+      this.billFacade.getBillSubTotal$().subscribe(data=>subTotal = data);
+      this.billFacade.getBillTotal$().subscribe(data=>total = data);
+      this.billFacade.getTableNumber$().subscribe(data=>tableNo = data)
       this.billFacade.getBillItems$().pipe(
         filter(data=>data!=null),
         map((data:any)=>{
         return data.map(a=>{
+          console.log(a)
+          if(a){
             return {
               product:a.product_id,
               qty:1,
               total:a.product_price
             } 
+          }
+            
             })
         }
       ))
-      .subscribe(data=>lines = data)
+      .subscribe(data=>{
+        console.log(data)
+        lines = data})
 
-let sentBillObject :BillModel = {bill_type:orderType,lines:lines,subtotal:subTotal,tax_rate:taxRate,total:total};
+let sentBillObject :BillModel = {bill_status:billStatus,bill_type:orderType,lines:lines,subtotal:subTotal,tax_rate:taxRate,total:total,table_number:tableNo};
+        console.log(sentBillObject)
 this.billFacade.cashBill(sentBillObject).subscribe((data:ServerResponse)=>{
   if(data.success == true){
     this.router.navigate(["/"])

@@ -7,10 +7,11 @@
         <button mat-flat-button 
         [disabled]="isBtnDisabled"
         class="option-btn col-3" style="background-color: grey;color:white">Cancel</button>
-        <button mat-flat-button
+        <button (click)="saveBill('Stored')"
+         mat-flat-button
         [disabled]="isBtnDisabled"
         class="option-btn col-3" style="background-color: red;color:white">Store</button>
-        <button (click)="cashClicked()"
+        <button (click)="saveBill('Cashed')"
         [disabled]="isBtnDisabled"
          mat-flat-button  class="option-btn col-6" color="primary">Cash</button>
     </div>
