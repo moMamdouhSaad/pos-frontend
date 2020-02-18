@@ -66,10 +66,23 @@ billItems = [];
         this.billState.resetBillStates();
     }
     setItemsToBillByTableNo(tableNo:number){
-        this.billApi.getBillByTableNo(tableNo).pipe(map((x:any)=>x.response),filter(data=>data.length>0)).subscribe(data=>{
-            this.billState.setBillItems(data[0].lines);
-            this.billState.setBillSubTotal(data[0].subtotal)
-            this.billState.setBillTotal(data[0].total)
+        this.billApi.getBillByTableNo(tableNo).pipe(map((x:any)=>x.response)).subscribe(data=>{
+            console.log(data)
+            const refinedAata = data.lines.filter(x=>x.product != null).map(x=>{
+                console.log(x)
+                return {
+                    product :{
+                        product_name: x.product.product_name,
+                        product_price: x.product.product_price,
+                        product_id: x.product._id}
+                    }
+               
+                    });
+            console.log(refinedAata)
+            this.billState.setBillItems(refinedAata)
+            this.getBillItems$().subscribe(data=>{console.log(data)})
+            this.billState.setBillSubTotal(data.subtotal)
+            this.billState.setBillTotal(data.total)
         })
     }
 }
