@@ -18,7 +18,6 @@ export class BillApi{
         return this.http.get<any>(`${this.taxRateAPI}/currentTaxRate`);
     }
     cash(bill:BillModel){
-        console.log(bill)
         return this.http.post<ServerResponse>(`${this.billAPI}/`,bill);
     }
     getBillByTableNo(tableNo:number){

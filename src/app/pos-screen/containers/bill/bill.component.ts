@@ -35,7 +35,6 @@ export class BillComponent implements OnInit {
         filter(data=>data!=null),
         map((data:any)=>{
         return data.map(a=>{
-          console.log(a)
           if(a){
             return {
               product:a.product_id,
@@ -48,7 +47,6 @@ export class BillComponent implements OnInit {
         }
       ))
       .subscribe(data=>{
-        console.log(data)
         lines = data})
 
 let sentBillObject :BillModel = {bill_status:billStatus,bill_type:orderType,lines:lines,subtotal:subTotal,tax_rate:taxRate,total:total,table_number:tableNo};

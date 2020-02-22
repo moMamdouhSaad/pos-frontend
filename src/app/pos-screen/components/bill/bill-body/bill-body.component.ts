@@ -14,7 +14,6 @@ export class BillBodyComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.billItems$.subscribe(data=>{console.log(data)})
   }
   downBtnClicked(){
     this.start += 5;

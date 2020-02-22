@@ -15,7 +15,6 @@ export class TableFacade{
       return this.tableApi.getAllTables().pipe(map(x=>x.response),
       map(data=>data.map(x=>{return{status:x.table_status,table_number:x.table_number,table_id:x._id}})),
       tap(tables=>{
-        console.log(tables)
         this.tableState.setAllTablesStates(tables)
     }
         )).subscribe();

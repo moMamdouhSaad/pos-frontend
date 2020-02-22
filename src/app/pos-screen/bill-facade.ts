@@ -53,7 +53,6 @@ billItems = [];
     }
 
     cashBill(bill:BillModel){
-        console.log(bill)
       return  this.billApi.cash(bill)
     }
     setTableNumber(tableNo:number){
@@ -67,8 +66,8 @@ billItems = [];
     }
     setItemsToBillByTableNo(tableNo:number){
         this.billApi.getBillByTableNo(tableNo).pipe(map((x:any)=>x.response)).subscribe(data=>{
-            console.log(data)
-            const refinedAata = data.lines.filter(x=>x.product != null).map(x=>{
+            if(!data){return}
+            const filteredData = data.lines.filter(x=>x.product != null).map(x=>{
                 console.log(x)
                 return {
                     product :{
@@ -78,9 +77,7 @@ billItems = [];
                     }
                
                     });
-            console.log(refinedAata)
-            this.billState.setBillItems(refinedAata)
-            this.getBillItems$().subscribe(data=>{console.log(data)})
+            this.billState.setBillItems(filteredData)
             this.billState.setBillSubTotal(data.subtotal)
             this.billState.setBillTotal(data.total)
         })
