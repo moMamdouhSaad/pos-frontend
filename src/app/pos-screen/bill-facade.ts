@@ -4,6 +4,7 @@ import { BillApi } from './services/bill-api';
 import { tap, map, flatMap, concatMap, filter } from "rxjs/operators"
 import { BillModel } from './models/Bill-model';
 import { ServerResponse } from '../models/ServerResponse';
+import { Customer } from '../models/customer';
 
 
 @Injectable({
@@ -82,4 +83,12 @@ billItems = [];
             this.billState.setBillTotal(data.total)
         })
     }
+
+    setCustomerInfo(customerInfo:Customer){
+        this.billState.setCustomerInfo(customerInfo)
+    }
+    getCustomerInfo$(){
+        return this.billState.getCustomerInfo$()
+    }
+
 }

@@ -14,6 +14,10 @@ const routes : Routes = [
   {
     path:"dine-in",
     loadChildren:'../dine-in/dine-in.module#DineInModule'
+  },
+  {
+  path:'delivery',
+  loadChildren:'../delivery/delivery.module#DeliveryModule'
   }
 ]
 

@@ -1,3 +1,4 @@
+import { Customer } from 'src/app/models/customer';
 
 export interface BillModel{
     serial_number?:number;
@@ -8,6 +9,7 @@ export interface BillModel{
     subtotal:number;
     tax_rate:number;
     total:number;
+    customerInfo?:Customer;
 }
 
 export interface line{

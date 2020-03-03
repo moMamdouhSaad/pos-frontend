@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
+import { Customer } from 'src/app/models/customer';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ export class BillStateService {
   private taxRate$ = new BehaviorSubject<number>(null);
   private billSubTotal$ = new BehaviorSubject<number>(0);
   private billTotal$ = new BehaviorSubject<number>(0);
+  private customerInfo = new Subject<Customer>();
+
 
   constructor() { }
 
@@ -79,5 +82,11 @@ export class BillStateService {
     this.orderType$.next(null);
     this.billSubTotal$.next(0);
     this.billTotal$.next(0);
+   }
+   setCustomerInfo(customerInfo:Customer){
+    this.customerInfo.next(customerInfo);
+   }
+   getCustomerInfo$(){
+     return this.customerInfo.asObservable();
    }
 }

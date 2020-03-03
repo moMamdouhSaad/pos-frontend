@@ -1,0 +1,35 @@
+<div class="example-container">
+
+<form [formGroup]="customerFormGroup" (ngSubmit)="posScreenRedirect()"> 
+    <mat-form-field appearance="fill" style="width:100%">
+      <mat-label>Enter Customer Phone</mat-label>
+      <input matInput placeholder="01066219698" formControlName="customerPhone" [matAutocomplete]="auto"  required>
+      <mat-error>dsa</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field style="width:30%;">
+      <input matInput placeholder="Customer name" formControlName="customerName">
+    </mat-form-field>
+
+    <mat-form-field style="width:60%;margin-left:30px">
+      <input matInput  placeholder="Address" formControlName="customerAddress">
+    </mat-form-field>
+   
+    <div> 
+      <button mat-flat-button color="primary" type="submit" style="float:right">Take Order </button>
+    </div>
+</form>
+
+<mat-autocomplete #auto="matAutocomplete" 
+(optionSelected)='getCustomerInfo($event.option.value)'
+[displayWith]="displayFn">
+  <mat-option *ngFor="let customer of filteredCustomers | async" [value]="customer">
+    <span style="margin-right:15px">{{ customer.customer_phone }}</span>
+    <small style="margin-right:15px">{{customer.customer_name}}</small>
+    <small style="margin-right:15px">{{customer.customer_address}}</small>
+  </mat-option>
+
+</mat-autocomplete>
+
+  </div>
+

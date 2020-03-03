@@ -7,7 +7,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class TableState{
     allTablesStates = new BehaviorSubject<any>(null);
 
-
     setAllTablesStates(tables:any){
         this.allTablesStates.next(tables)
     }
