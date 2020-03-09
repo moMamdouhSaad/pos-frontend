@@ -85,7 +85,7 @@ billItems = [];
     }
 
     setCustomerInfo(customerInfo:Customer){
-        this.billState.setCustomerInfo(customerInfo)
+        this.billState.setCustomerInfo(customerInfo);
     }
     getCustomerInfo$(){
         return this.billState.getCustomerInfo$()

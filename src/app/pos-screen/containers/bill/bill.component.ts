@@ -20,7 +20,7 @@ export class BillComponent implements OnInit, OnDestroy {
   constructor(private billFacade:BillFacade,private router:Router) { }
 
   ngOnInit() {
-    this.billFacade.getCustomerInfo$().subscribe(data=>console.log(data))
+    this.billFacade.getCustomerInfo$().pipe(takeUntil(this._destroy)).subscribe(data=>console.log(data))
   }
   saveBill(billStatus:string){
       let orderType: string;
@@ -30,7 +30,7 @@ export class BillComponent implements OnInit, OnDestroy {
       let taxRate: number;
       let tableNo: number;
       let customerInfo: Customer;
-      this.billFacade.getCustomerInfo$().pipe(takeUntil(this._destroy)).subscribe(data=>{console.log(data)})
+      this.billFacade.getCustomerInfo$().pipe(takeUntil(this._destroy)).subscribe(data=>{console.log(data);customerInfo = data})
       this.billFacade.getOrderType$().pipe(takeUntil(this._destroy)).subscribe(data=>{console.log(data);orderType = data});
       this.billFacade.getTaxRate$().pipe(takeUntil(this._destroy)).subscribe(data=>taxRate = data);
       this.billFacade.getBillSubTotal$().pipe(takeUntil(this._destroy)).subscribe(data=>subTotal = data);

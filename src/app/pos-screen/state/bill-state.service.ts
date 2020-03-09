@@ -12,7 +12,7 @@ export class BillStateService {
   private taxRate$ = new BehaviorSubject<number>(null);
   private billSubTotal$ = new BehaviorSubject<number>(0);
   private billTotal$ = new BehaviorSubject<number>(0);
-  private customerInfo = new Subject<Customer>();
+  private customerInfo = new BehaviorSubject<any>(null);
 
 
   constructor() { }
