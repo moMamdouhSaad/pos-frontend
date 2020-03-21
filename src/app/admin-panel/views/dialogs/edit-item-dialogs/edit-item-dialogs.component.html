@@ -1,0 +1,31 @@
+<p>Edit Item</p>
+
+<div class="container-fluid" style="width:80%">
+    <form [formGroup] = "editFormGroup" >
+    <mat-form-field appearance="fill"  class="form-field">
+        <mat-label>Item name</mat-label>
+        <input formControlName="itemName" matInput  >
+        <mat-error *ngIf = 'editFormGroup.get("itemName").invalid'>Item name must be at least 1 char and max 20 char</mat-error>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Item Price</mat-label>
+        <input matInput  formControlName="itemPrice">
+        <mat-error *ngIf='editFormGroup.get("itemName").invalid'>item price must be at least 1 digit and at least 5 digits</mat-error>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Item Category</mat-label>
+        <mat-select  formControlName="itemCategory">
+            <mat-option *ngFor="let category of data.categoryList | async" [value]="category._id" >
+                {{category.category_name}}
+            </mat-option>   
+        </mat-select>
+    </mat-form-field>
+    <br>
+
+      <button (click)="saveEditedItem()" mat-button color="primary">Save</button>
+    </form>
+</div>

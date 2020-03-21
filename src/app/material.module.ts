@@ -5,8 +5,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatSelectModule} from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
  
@@ -19,8 +20,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule,
     MatToolbarModule,
     MatDividerModule,
-    MatFormFieldModule,MatInputModule,MatAutocompleteModule,MatSelectModule
+    MatFormFieldModule,MatInputModule,MatAutocompleteModule,MatSelectModule,MatDialogModule
   ],
-  exports:[MatButtonModule,MatToolbarModule,MatDividerModule,MatFormFieldModule,MatInputModule,MatAutocompleteModule,MatSelectModule]
+  exports:[MatButtonModule,MatToolbarModule,
+    MatDividerModule,MatFormFieldModule,
+    MatInputModule,MatAutocompleteModule,
+    MatSelectModule,MatDialogModule]
 })
 export class MaterialModule { }

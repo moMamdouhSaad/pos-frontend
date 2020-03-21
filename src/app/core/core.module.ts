@@ -13,6 +13,6 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     MaterialModule
   ],
-  exports:[HeaderComponent]
+  exports:[HeaderComponent,MaterialModule]
 })
 export class CoreModule { }

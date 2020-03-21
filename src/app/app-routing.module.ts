@@ -9,16 +9,17 @@ const routes : Routes = [
   } ,
   {
     path:'takeaway',
-    loadChildren:'../takeaway/takeaway.module#TakeawayModule'
+    loadChildren:'./takeaway/takeaway.module#TakeawayModule'
   },
   {
     path:"dine-in",
-    loadChildren:'../dine-in/dine-in.module#DineInModule'
+    loadChildren:'./dine-in/dine-in.module#DineInModule'
   },
   {
   path:'delivery',
-  loadChildren:'../delivery/delivery.module#DeliveryModule'
-  }
+  loadChildren:'./delivery/delivery.module#DeliveryModule'
+  },
+  { path: 'admin-panel', loadChildren: () => import('./admin-panel/admin-panel.module').then(m => m.AdminPanelModule) }
 ]
 
 @NgModule({

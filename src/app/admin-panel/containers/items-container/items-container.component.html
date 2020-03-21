@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <h4>Select item's Category</h4>
+<mat-form-field>
+  <mat-label>Category</mat-label>
+  <mat-select (selectionChange)="setItems($event.value)">
+    <mat-option *ngFor="let category of itemsFacade.getCategories$() | async" [value]="category._id" >
+     {{category.category_name}}
+    </mat-option>
+  </mat-select> 
+</mat-form-field>
+<app-items-list
+(saveEditedItem)="saveEditedItem($event)"
+[itemList] = "itemsFacade.getItemsByCategory$()" [categoryList]="itemsFacade.getCategories$()"></app-items-list>
+</div>

@@ -1,0 +1,10 @@
+
+<button style="float:right" mat-button *ngIf="itemList.source.value"> Add New Item </button>
+<div>
+    <ng-container *ngFor = "let item of itemList | async">
+        <p> {{item.product_name + " $" + item.product_price}} 
+            <button (click)="openEditDialog(item._id, item.product_name, item.product_price, item.category_id )" mat-button style="float: right">Edit</button>
+        </p>
+    </ng-container>
+
+</div>
