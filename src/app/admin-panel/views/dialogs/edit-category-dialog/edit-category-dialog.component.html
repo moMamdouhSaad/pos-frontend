@@ -1,0 +1,13 @@
+<p>Edit category</p>
+
+<div class="container-fluid" style="width:80%">
+    <form [formGroup] = "editFormGroup" >
+    <mat-form-field appearance="fill"  class="form-field">
+        <mat-label>Category name</mat-label>
+        <input formControlName="categoryName" matInput  >
+        <mat-error *ngIf = 'editFormGroup.get("categoryName").invalid'>Category name must be at least 1 char and max 20 char</mat-error>
+    </mat-form-field>
+    <br>
+    <button (click)="saveEditedCategory()" mat-button color="primary">Save</button>
+    </form>
+</div>

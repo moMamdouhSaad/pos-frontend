@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { CategoriesResponse } from 'src/app/models/category';
+import { CategoriesResponse, Category } from 'src/app/models/category';
 import { ItemsResponse, Item } from 'src/app/models/item';
 
 
@@ -22,9 +22,18 @@ export class ItemCategoriesApi{
       }
 
     saveEditedItem(item: Item):Observable<any>{
-        return this.http.patch<any>(this.itemAPI+item._id,item)
+        return this.http.patch<any>(this.itemAPI+item._id, item)
     }  
 
+    addNewItem(item: Item):Observable<any>{
+      return this.http.post<any>(this.itemAPI, item)
+    }
 
+    saveEditedCategory(category: Category):Observable<any>{
+      return this.http.patch<any>(this.categoryAPI+category._id, category)
+  } 
+    addNewCategory(category: Category):Observable<any>{
+      return this.http.post<any>(this.categoryAPI, category)
+    } 
     
 }

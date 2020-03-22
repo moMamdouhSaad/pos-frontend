@@ -17,8 +17,6 @@ editFormGroup: FormGroup = new FormGroup({
   itemName: new FormControl(" ", [Validators.required, Validators.maxLength(20)]),
   itemPrice: new FormControl(" ", [Validators.required, Validators.maxLength(5)]),
   itemCategory: new FormControl(" ", [Validators.required]),
-
-
 })
   constructor(public dialogRef: MatDialogRef<EditItemDialogsComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {}
   

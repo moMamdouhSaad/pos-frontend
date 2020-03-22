@@ -10,15 +10,19 @@ import { UsersContainerComponent } from './containers/users-container/users-cont
 import { ItemsListComponent } from './views/items-list/items-list.component';
 import { EditItemDialogsComponent } from './views/dialogs/edit-item-dialogs/edit-item-dialogs.component';
 import { SharedModule } from '../shared/shared.module';
+import { AddItemDialogsComponent } from './views/dialogs/add-item-dialogs/add-item-dialogs.component';
+import { CategoriesListComponent } from './views/categories-list/categories-list.component';
+import { EditCategoryDialogComponent } from './views/dialogs/edit-category-dialog/edit-category-dialog.component';
+import { AddCategoryDialogComponent } from './views/dialogs/add-category-dialog/add-category-dialog.component';
 
 
 @NgModule({
-  declarations: [AdminPanelComponent, ItemsContainerComponent, CategoriesContainerComponent, TablesContainerComponent, UsersContainerComponent, ItemsListComponent, EditItemDialogsComponent],
+  declarations: [AdminPanelComponent, ItemsContainerComponent, CategoriesContainerComponent, TablesContainerComponent, UsersContainerComponent, ItemsListComponent, EditItemDialogsComponent, AddItemDialogsComponent, CategoriesListComponent, EditCategoryDialogComponent, AddCategoryDialogComponent],
   imports: [
     CommonModule,
     AdminPanelRoutingModule,
     SharedModule
   ],
-  entryComponents: [EditItemDialogsComponent]
+  entryComponents: [EditItemDialogsComponent, AddItemDialogsComponent, EditCategoryDialogComponent, AddCategoryDialogComponent]
 })
 export class AdminPanelModule { }

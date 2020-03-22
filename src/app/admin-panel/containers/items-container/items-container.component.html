@@ -8,6 +8,7 @@
     </mat-option>
   </mat-select> 
 </mat-form-field>
+<button style="float:right" (click)="openAddItemDialog()" mat-button> Add New Item </button>
 <app-items-list
 (saveEditedItem)="saveEditedItem($event)"
 [itemList] = "itemsFacade.getItemsByCategory$()" [categoryList]="itemsFacade.getCategories$()"></app-items-list>

@@ -1,1 +1,8 @@
-<p>categories-container works!</p>
+<button (click)="openAddCategoryDialog()"
+ mat-button style="float:right"> Add Category </button>
+<br>
+<br>
+<app-categories-list
+(savedEditedCategory)="savedEditedCategory($event)"
+[categoryList]="categoriesFacade.getCategories$()">
+</app-categories-list>

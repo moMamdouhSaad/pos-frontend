@@ -31,10 +31,16 @@ export class ItemsState{
       }
 
       updateItem(updatedItem: Item){
-          const items = this.selectedItems$.getValue();
+          const items = this.items$.getValue();
           const indexOfUpdated = items.findIndex(item => item._id === updatedItem._id);
           items[indexOfUpdated] = updatedItem;
-          this.selectedItems$.next([...items])
+          this.items$.next([...items])
+      }
+
+      addItem(addedItem: Item){
+        const items = this.items$.getValue();
+        this.items$.next([...items, addedItem])
+
       }
 
 }

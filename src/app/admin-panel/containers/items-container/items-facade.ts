@@ -64,4 +64,8 @@ saveEditedItem(item: Item){
     return this.itemsApi.saveEditedItem(item)
 }
 
+addNewItem(item: Item){
+    this.itemsState.addItem(item)
+    return this.itemsApi.addNewItem(item)
+}
 }

@@ -4,7 +4,7 @@ export interface ItemsResponse {
 }
 
 export interface Item{
-    _id : string,
+    _id? : string,
     product_name : string,
     product_price:number,
     category_id:string,
