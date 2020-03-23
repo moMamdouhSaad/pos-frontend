@@ -1,1 +1,17 @@
-<p>tables-container works!</p>
+<div class="container-fluid">
+    <p>Add Table</p>
+<p> Current number of tables is {{tablesFacade.getTablesNums$() | async}} </p>
+<div class="container-fluid" style="width:80%">
+    <form [formGroup] = "addFormGroup" >
+    <mat-form-field appearance="fill"  class="form-field">
+        <mat-label>How many table</mat-label>
+        <input formControlName="tablesNu" matInput  >
+        <mat-error *ngIf = 'addFormGroup.get("tablesNu").invalid'>Table Num must be nums only and max num is 100</mat-error>
+    </mat-form-field>
+    <br>
+
+      <button (click)="addNewTables()" mat-button color="primary">Save</button>
+    </form>
+</div>
+
+</div>
