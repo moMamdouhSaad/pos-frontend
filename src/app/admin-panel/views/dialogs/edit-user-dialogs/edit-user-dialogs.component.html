@@ -1,0 +1,18 @@
+<p>Edit user</p>
+
+<div class="container-fluid" style="width:80%">
+    <form [formGroup] = "editFormGroup" >
+    <mat-form-field appearance="fill"  class="form-field">
+        <mat-label>username</mat-label>
+        <input formControlName="username" matInput  >
+        <mat-error *ngIf = 'editFormGroup.get("username").invalid'>error username</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill"  class="form-field">
+        <mat-label>role</mat-label>
+        <input formControlName="role" matInput  >
+        <mat-error *ngIf = 'editFormGroup.get("role").invalid'>error user role</mat-error>
+    </mat-form-field>
+    <br>
+    <button (click)="saveEditedUser()" mat-button color="primary">Save</button>
+    </form>
+</div>

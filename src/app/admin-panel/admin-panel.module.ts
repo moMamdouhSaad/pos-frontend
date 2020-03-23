@@ -13,15 +13,20 @@ import { AddItemDialogsComponent } from './views/dialogs/add-item-dialogs/add-it
 import { CategoriesListComponent } from './views/categories-list/categories-list.component';
 import { EditCategoryDialogComponent } from './views/dialogs/edit-category-dialog/edit-category-dialog.component';
 import { AddCategoryDialogComponent } from './views/dialogs/add-category-dialog/add-category-dialog.component';
+import { UsersListComponent } from './views/users-list/users-list.component';
+import { AddUserDialogsComponent } from './views/dialogs/add-user-dialogs/add-user-dialogs.component';
+import { EditUserDialogsComponent } from './views/dialogs/edit-user-dialogs/edit-user-dialogs.component';
 
 
 @NgModule({
-  declarations: [AdminPanelComponent, ItemsContainerComponent, CategoriesContainerComponent, TablesContainerComponent, UsersContainerComponent, ItemsListComponent, EditItemDialogsComponent, AddItemDialogsComponent, CategoriesListComponent, EditCategoryDialogComponent, AddCategoryDialogComponent],
+  declarations: [AdminPanelComponent, ItemsContainerComponent, CategoriesContainerComponent, TablesContainerComponent, UsersContainerComponent, ItemsListComponent, EditItemDialogsComponent, AddItemDialogsComponent, CategoriesListComponent, EditCategoryDialogComponent, AddCategoryDialogComponent, UsersListComponent, AddUserDialogsComponent, EditUserDialogsComponent],
   imports: [
     CommonModule,
     AdminPanelRoutingModule,
     SharedModule
   ],
-  entryComponents: [EditItemDialogsComponent, AddItemDialogsComponent, EditCategoryDialogComponent, AddCategoryDialogComponent]
+  entryComponents: [EditItemDialogsComponent, AddItemDialogsComponent,
+     EditCategoryDialogComponent, AddCategoryDialogComponent,
+     AddUserDialogsComponent, EditUserDialogsComponent]
 })
 export class AdminPanelModule { }

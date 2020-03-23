@@ -1,0 +1,7 @@
+<div>
+    <ng-container *ngFor = "let user of userList | async">
+        <p> {{user.username}} 
+            <button (click)="openEditDialog(user._id, user.username, user.role)"  mat-button style="float: right">Edit</button>
+        </p>
+    </ng-container>
+</div>

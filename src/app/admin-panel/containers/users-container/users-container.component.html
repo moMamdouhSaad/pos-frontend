@@ -1,1 +1,11 @@
-<p>users-container works!</p>
+<div class="container-fluid">
+    <button (click)="openAddUserDialog()"
+    mat-button style="float:right"> Add User </button>
+   <br>
+   <br>
+
+    <app-users-list
+    (savedEditedUser)="updateUser($event)"
+    [userList]="userFacade.getAllUsers$()"></app-users-list>
+    
+</div>
