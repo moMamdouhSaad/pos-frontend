@@ -1,12 +1,15 @@
 .container-fluid{
     display: inline;
 }
-.container-fluid button {
+.main-container{
+    display: flex;
+}
+ button {
     width:95px;
-    height: 75px;
+    height:75px;
 
-    margin-right:10px;
-    margin-bottom:10px;
+    /* margin-right:10px;
+    margin-bottom:10px; */
 }
 
 .printed{
