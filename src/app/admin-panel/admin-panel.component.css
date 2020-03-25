@@ -4,6 +4,5 @@
     flex-direction: row;
     max-height: 35rem; /* so that items wrap */
     justify-content: space-around;
-    align-content: flex-start
-
+    align-content: flex-start;
 }

@@ -1,0 +1,18 @@
+.main-container{
+    padding:40px;
+    overflow: hidden;
+    height: 100%;
+}
+.form-container{
+    height:80vh;
+    overflow-y: auto;
+}
+
+@media (min-width: 0px) and (max-width: 480px) {
+ 
+    .main-container{
+        padding:20px;
+        overflow: hidden;
+        height: 100%;
+    }
+}

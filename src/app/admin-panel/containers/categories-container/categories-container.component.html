@@ -1,8 +1,13 @@
-<button (click)="openAddCategoryDialog()"
- mat-button style="float:right"> Add Category </button>
-<br>
+<div class="main-container">
+
+<div>
+    <span>Edit category</span>
+    <button (click)="openAddCategoryDialog()" mat-button style="float:right"> Add Category </button>
+</div>
 <br>
 <app-categories-list
 (savedEditedCategory)="savedEditedCategory($event)"
 [categoryList]="categoriesFacade.getCategories$()">
 </app-categories-list>
+
+</div>

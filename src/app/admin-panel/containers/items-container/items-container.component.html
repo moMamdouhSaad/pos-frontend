@@ -1,15 +1,20 @@
-<div class="container-fluid">
-    <h4>Select item's Category</h4>
-<mat-form-field>
-  <mat-label>Category</mat-label>
-  <mat-select (selectionChange)="setItems($event.value)">
-    <mat-option *ngFor="let category of itemsFacade.getCategories$() | async" [value]="category._id" >
-     {{category.category_name}}
-    </mat-option>
-  </mat-select> 
-</mat-form-field>
-<button style="float:right" (click)="openAddItemDialog()" mat-button> Add New Item </button>
+<div class="main-container">
+    <div>
+      <span>Edit item</span>
+      <button style="float:right" (click)="openAddItemDialog()" mat-button> Add New Item </button>
+    </div>
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select (selectionChange)="setItems($event.value)">
+        <mat-option *ngFor="let category of itemsFacade.getCategories$() | async" [value]="category._id" >
+         {{category.category_name}}
+        </mat-option>
+      </mat-select> 
+    </mat-form-field>
+<div class="form-container">
 <app-items-list
 (saveEditedItem)="saveEditedItem($event)"
-[itemList] = "itemsFacade.getItemsByCategory$()" [categoryList]="itemsFacade.getCategories$()"></app-items-list>
+[itemList] = "itemsFacade.getItemsByCategory$()" [categoryList]="itemsFacade.getCategories$()">
+</app-items-list>
+</div>
 </div>

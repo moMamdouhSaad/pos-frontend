@@ -1,7 +1,7 @@
-<div>
+<div class="main-container">
     <ng-container *ngFor = "let category of categoryList | async">
         <p> {{category.category_name}} 
-            <button (click)="openEditDialog(category._id, category.category_name)" mat-button style="float: right">Edit</button>
+            <button (click)="openEditDialog(category._id, category.category_name)" class="edit-btns" mat-button >Edit</button>
         </p>
     </ng-container>
 </div>

@@ -1,7 +1,6 @@
-<div class="container-fluid">
+<div class="main-container">
     <p>Add Table</p>
 <p> Current number of tables is {{tablesFacade.getTablesNums$() | async}} </p>
-<div class="container-fluid" style="width:80%">
     <form [formGroup] = "addFormGroup" >
     <mat-form-field appearance="fill"  class="form-field">
         <mat-label>How many table</mat-label>
@@ -12,6 +11,5 @@
 
       <button (click)="addNewTables()" mat-button color="primary">Save</button>
     </form>
-</div>
 
 </div>
