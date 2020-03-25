@@ -1,9 +1,26 @@
-.container-fluid{
-    position: absolute;
-    bottom: 0;
-    left:0
-}
+
 .option-btn {
-    height:60px;
+    height:100%;
     margin-top:5px
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    height:10vh;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .main-container{
+        display: flex;
+        flex-direction: row;
+        height:10vh;
+        /* height: 100px; */
+    }
+    
+    .option-btn {
+        height:100%;
+        margin-top:5px
+    }
+    
 }

@@ -10,3 +10,72 @@
 .item-btns-container{
     padding:5px
 }
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    /* box-sizing: border-box; */
+    /* flex: 1 0 21%; explanation below */
+    margin: 5px;
+    justify-content: center;
+    height:  95%;
+    overflow: auto;
+    align-content: flex-start
+
+}
+.main-container button{
+    /* height: 50%; */
+    white-space: normal;
+    word-wrap: break-word;
+
+    width:22%;
+    margin:5px;
+    height: 75px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+       
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+    
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .main-container{
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        /* flex: 1 0 21%; explanation below */
+        margin: 5px;
+        height: 20vh;
+        border:2px red dashed;
+        overflow: scroll; 
+        justify-content: center;
+    }
+    .main-container button{
+        height:50%;
+        width:25%;
+        margin:5px;
+    } 
+
+
+}
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 0px) and (max-width: 480px) {
+ 
+     
+}
+

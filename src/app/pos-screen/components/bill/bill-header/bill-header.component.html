@@ -1,13 +1,15 @@
-<div class='container-fluid'> 
-    <div class="row">
-         <div class="col-6"> 
-            Serial : 513131
+<div class='main-container'> 
+         <div> 
+           <span> Serial : 513131 </span>
+           <span>Type : {{orderType  | async}}</span>
          </div>   
-         <div class="col-6">
-            Type : {{orderType  | async}}
-         </div>
-    </div>
-    Table no : {{tableNo | async}}<br>
-    Email   : ----------<br>
-    Phone   : ----------<br>
+        <div>
+           <span>
+            Table no : {{tableNo | async}}
+           </span>
+           <span>
+            Phone   : ----------<br>
+
+           </span>
+   </div>
 </div>

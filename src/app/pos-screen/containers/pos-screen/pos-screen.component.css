@@ -5,3 +5,75 @@
 .pos-screen-container{
     height: 100%;
 }
+
+.main-container{
+    display: flex;
+    height: 100%;
+}
+app-bill{
+    flex:1
+}
+app-items-categories{
+    flex:4
+}
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+    app-bill{
+        flex:2
+    }
+    app-items-categories{
+        flex:4
+    }
+           
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1300px) and (orientation: landscape) {
+  
+    app-bill{
+        flex:2
+    }
+    app-items-categories{
+        flex:4
+    }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .main-container{
+        display: flex;
+        height: 100%;
+        flex-direction: column-reverse;
+    } 
+   
+
+app-bill{
+    /* visibility: hidden; */
+    flex:1;
+    border:2px green dashed;
+}
+app-items-categories{
+    flex:1;
+}
+
+}
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 0px) and (max-width: 480px) {
+ 
+     
+}

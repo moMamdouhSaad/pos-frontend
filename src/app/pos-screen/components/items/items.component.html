@@ -1,5 +1,11 @@
- <div class="item-btns-container">
+ <!-- <div class="item-btns-container"> -->
+
+    <div class="main-container">
+
     <button (click)="itemClicked(product)"
-     mat-flat-button class="item-btn" *ngFor ="let product of products$ | async">{{product.product_name}}</button>
- </div>   
+     mat-flat-button  *ngFor ="let product of products$ | async">{{product.product_name}}</button>
+
+    </div>
+
+ <!-- </div>    -->
 

@@ -1,10 +1,79 @@
-.container-fluid{
-    height:calc(80% - 180px);
-    overflow-y: auto;
-    position:relative; 
-}
 
 .bottom {
     position:absolute;
     bottom: 0;
+}
+.body-items{
+    overflow-y: scroll;
+    /* height: 200px; */
+}
+.header-items{
+    display: flex;
+    flex-direction: row;
+}
+
+.item-flex{
+    flex : 5
+}
+.qty-flex{
+    flex:2
+}
+.total-flex{
+flex:2
+}
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+.main-container{
+    display: flex;
+    flex-direction: column;
+    height: 47vh;
+    overflow-y: auto;
+    
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+   
+    
+    
+        
+       
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        height:20vh;
+        /* height: 100px; */
+    }
+    .body-items{
+        overflow-y: scroll;
+        /* height: 100px; */
+    }
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 0px) and (max-width: 480px) {
+ 
+     
 }

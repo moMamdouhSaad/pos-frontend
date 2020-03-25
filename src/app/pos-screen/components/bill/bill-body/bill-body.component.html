@@ -1,20 +1,18 @@
 
-<div class="container-fluid ">
-    <div class="row">
-        <div class="col-sm-8"> Item name</div>
-        <div class="col-sm-2"> Qty</div>
-        <div class="col-sm-2"> Total</div>
+<div class="main-container">
+    <div class="header-items">
+        <div class="item-flex"> Item </div>
+        <div class="qty-flex"> Q </div>
+        <div class="total-flex"> T</div>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-<ng-container *ngFor = " let item of billItems$ | async | slice : start  : start +  10  ">
+    <div class="body-items">
+<ng-container *ngFor = " let item of billItems$ | async  ">
     <app-bill-body-item [item]="item">
     </app-bill-body-item>
 </ng-container>
-    </div>   
     </div>
-    <div class="row bottom col-sm-12" >
+    <!-- <div class="row bottom col-sm-12" >
         <button class="col-6" (click)="downBtnClicked()" mat-flat-button>Down</button>
         <button class="col-6" (click)="upBtnClicked()"  mat-flat-button>UP</button>
-    </div>
+    </div> -->
 </div>

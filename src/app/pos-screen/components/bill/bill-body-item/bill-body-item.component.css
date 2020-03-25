@@ -1,0 +1,16 @@
+.main-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.item-name{
+    flex:2;
+   
+}
+
+.item-qty{
+    flex:1;
+}
+.item-price{
+    flex:1;
+}

@@ -1,7 +1,7 @@
 
-<div class="container-fluid h-100">
-    <div class="row pos-screen-container">
-        <app-bill  class="col-sm-3 " style="border:1px red dashed"></app-bill>
-        <app-items-categories (onItemClicked)="billFacade.addItemToBill($event)" class="col-sm-9"></app-items-categories>
-    </div>
+<div class="main-container">
+    <!-- <div class="row pos-screen-container"> -->
+        <app-bill></app-bill>
+        <app-items-categories (onItemClicked)="billFacade.addItemToBill($event)" ></app-items-categories>
+    <!-- </div> -->
 </div>

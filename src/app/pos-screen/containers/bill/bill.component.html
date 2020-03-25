@@ -1,3 +1,5 @@
+
+<div class="main-container">
 <app-bill-header [orderType]="billFacade.getOrderType$()" [tableNo]="billFacade.getTableNumber$()"></app-bill-header>
 <mat-divider></mat-divider>
 <app-bill-body 
@@ -11,3 +13,4 @@
 </app-bill-footer>
 <mat-divider></mat-divider>
 <app-bill-option (onStoreOrCashClicked)="saveBill($event)"></app-bill-option>
+</div>

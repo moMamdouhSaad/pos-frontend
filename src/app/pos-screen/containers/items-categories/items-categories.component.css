@@ -1,0 +1,68 @@
+.main-container{
+    display: flex;
+    height: 100%;
+}
+
+app-categories{
+flex:1
+}
+
+app-items{
+flex:5
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+       
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  
+ .main-container{
+     flex-direction: column;
+     height: 30vh;
+ }
+
+app-categories{
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    }
+    
+    app-items{
+        /* height: 300px;
+
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap; */
+    flex:3;
+    /* overflow-y: scroll;  */
+    
+    
+}}
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 0px) and (max-width: 480px) {
+ 
+     
+}
+
