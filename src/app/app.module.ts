@@ -9,13 +9,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TakeawayModule } from './takeaway/takeaway.module';
 import { DineInModule } from './dine-in/dine-in.module';
 import { DeliveryModule } from './delivery/delivery.module';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { DeliveryModule } from './delivery/delivery.module';
     HomeModule,
     TakeawayModule,
     DineInModule,
-    DeliveryModule
+    DeliveryModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
