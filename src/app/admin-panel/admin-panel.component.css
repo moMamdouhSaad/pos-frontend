@@ -1,8 +1,60 @@
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-height: 35rem; /* so that items wrap */
-    justify-content: space-around;
-    align-content: flex-start;
+
+
+.home-btn {
+    width: 150px !important;
+    height: 65px !important;
+    margin: 10px
 }
+
+.main-container{
+    height: 100%;
+    display: flex;
+    /* border:2px red dashed; */
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+       
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  @media (min-width: 0px) and (max-width: 480px) {
+    .main-container{
+        flex-direction: column;
+    }
+    .home-btn {
+        width: 100% !important;
+        height: 65px !important;
+        margin: 10px
+    }
+       
+  }

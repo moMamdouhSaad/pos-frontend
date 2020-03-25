@@ -1,6 +1,10 @@
-<div class="flex-container">
-    <button routerLink="/admin-panel/items" class="flex-btn" mat-flat-button>Items</button>
-    <button routerLink="/admin-panel/categories" class="flex-btn" mat-flat-button>Categories</button>
-    <button routerLink="/admin-panel/tables" class="flex-btn" mat-flat-button>Tables</button>
-    <button routerLink="/admin-panel/users" class="flex-btn" mat-flat-button>Users</button>
+<div class="main-container">
+    <button routerLink="/admin-panel/items" (click)="setAdminPanelChoice('items')"
+    class='home-btn' mat-flat-button>Items</button>
+    <button routerLink="/admin-panel/categories" (click)="setAdminPanelChoice('categories')"
+    class='home-btn' mat-flat-button>Categories</button>
+    <button routerLink="/admin-panel/tables" (click)="setAdminPanelChoice('tables')"
+    class='home-btn' mat-flat-button>Tables</button>
+    <button routerLink="/admin-panel/users" (click)="setAdminPanelChoice('users')"
+    class='home-btn' mat-flat-button>Users</button>
 </div>

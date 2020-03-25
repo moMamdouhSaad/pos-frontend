@@ -2,5 +2,7 @@
     <mat-toolbar-row>
       <span id="home-page-link" routerLink="/"> Home Page </span>
       <span id="home-page-link" routerLink="/admin-panel"> Admin Panel</span>
+      <span *ngIf="headerService.getAdminPanelChoice$() | async" style="font-size: 13px;"> > &nbsp; {{ headerService.getAdminPanelChoice$() | async}}</span>
+
     </mat-toolbar-row>
     </mat-toolbar>
