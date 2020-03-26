@@ -12,7 +12,7 @@ import { UsersApi } from '../../api/usersApi';
 })
 export class UsersContainerComponent implements OnInit {
 
-  constructor(private userFacade: UsersFacade, public dialog : MatDialog) { }
+  constructor(public userFacade: UsersFacade, public dialog : MatDialog) { }
 
   ngOnInit() {
     this.userFacade.getAllUsers$().subscribe(data=>{

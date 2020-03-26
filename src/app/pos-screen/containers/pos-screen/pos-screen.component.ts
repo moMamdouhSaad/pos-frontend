@@ -9,7 +9,7 @@ import { BillFacade } from '../../bill-facade';
 export class PosScreenComponent implements OnInit {
 @Input() orderType:string;
 
-  constructor(private billFacade:BillFacade) { }
+  constructor(public billFacade:BillFacade) { }
 
   ngOnInit() {
     this.billFacade.setOrderType(this.orderType);

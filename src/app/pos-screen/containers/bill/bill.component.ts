@@ -17,7 +17,7 @@ export class BillComponent implements OnInit, OnDestroy {
   cashedBill:BillModel;
   sendBillToServer = new BehaviorSubject<any>(null);
   _destroy = new Subject();
-  constructor(private billFacade:BillFacade,private router:Router) { }
+  constructor(public billFacade:BillFacade,private router:Router) { }
 
   ngOnInit() {
     this.billFacade.getCustomerInfo$().pipe(takeUntil(this._destroy)).subscribe(data=>console.log(data))

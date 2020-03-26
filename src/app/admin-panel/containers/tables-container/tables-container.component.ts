@@ -11,7 +11,7 @@ export class TablesContainerComponent implements OnInit {
   addFormGroup: FormGroup = new FormGroup({
     tablesNu: new FormControl("", [Validators.required, Validators.pattern("^[0-9]*$"), Validators.maxLength(20), Validators.max(100)]),
   })
-  constructor(private tablesFacade: TablesFacade) {}
+  constructor(public tablesFacade: TablesFacade) {}
 
   ngOnInit() {
   }

@@ -12,7 +12,7 @@ import { AddItemDialogsComponent } from '../../views/dialogs/add-item-dialogs/ad
 })
 export class ItemsContainerComponent implements OnInit {
 itemList: Item[];
-  constructor(private itemsFacade: ItemsFacade, public dialog: MatDialog) { }
+  constructor(public itemsFacade: ItemsFacade, public dialog: MatDialog) { }
 
   ngOnInit() {
     }

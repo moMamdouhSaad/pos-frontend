@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class TablesComponent implements OnInit {
 
-  constructor(private tableFacade:TableFacade,private router:Router) { 
+  constructor(public tableFacade:TableFacade,private router:Router) { 
     this.tableFacade.loadAllTables()
   }
 

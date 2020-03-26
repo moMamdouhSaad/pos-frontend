@@ -11,7 +11,7 @@ import { Category } from 'src/app/models/category';
 })
 export class CategoriesContainerComponent implements OnInit {
 
-  constructor(private categoriesFacade: CategoriesFacade, public dialog: MatDialog) { }
+  constructor(public categoriesFacade: CategoriesFacade, public dialog: MatDialog) { }
 
   ngOnInit() {
     // this.categoriesFacade.getCategories$().subscribe(data=>console.log(data))
