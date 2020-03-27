@@ -12,9 +12,12 @@ import { AddItemDialogsComponent } from '../../views/dialogs/add-item-dialogs/ad
 })
 export class ItemsContainerComponent implements OnInit {
 itemList: Item[];
-  constructor(public itemsFacade: ItemsFacade, public dialog: MatDialog) { }
+  constructor(public itemsFacade: ItemsFacade, public dialog: MatDialog) { 
+  }
 
   ngOnInit() {
+    this.itemsFacade.loadCategories();
+    this.itemsFacade.loadProducts();
     }
 
     setItems(categoryId){
@@ -39,8 +42,12 @@ itemList: Item[];
      dialogRef.componentInstance.onSave.subscribe((data: Item)=>{
        this.itemsFacade.addNewItem(data).subscribe(data=>{         
          console.log(data)
-       })
-       console.log(data)
+       },
+       err=>{
+         this.itemsFacade.errHandlerService.showDialog();
+         this.itemsFacade.removeItem(data)
+       }
+       )
      })
    } 
 }

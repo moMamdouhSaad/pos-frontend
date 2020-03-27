@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-bill-option',
@@ -8,6 +9,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class BillOptionComponent implements OnInit {
 @Output() onStoreOrCashClicked = new EventEmitter<any>();
 isBtnDisabled:boolean = false;
+@Input() linesState: Observable<boolean>
  
 constructor() { }
 

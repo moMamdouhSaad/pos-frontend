@@ -14,6 +14,7 @@ export class TablesContainerComponent implements OnInit {
   constructor(public tablesFacade: TablesFacade) {}
 
   ngOnInit() {
+    this.tablesFacade.setTablesNums();
   }
   addNewTables(){
     if(this.addFormGroup.invalid){

@@ -25,5 +25,9 @@ export class UsersState{
         console.log(users)
         this.setUsers(users)
     }
+    removeUser(userRemoved: User){
+        const users = this.users.getValue();
+        this.users.next(users.filter(user=>user !== userRemoved))
+    }
 
 }

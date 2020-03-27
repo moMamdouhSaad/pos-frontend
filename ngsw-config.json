@@ -1,0 +1,71 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+
+  "dataGroups": [
+  {"name": "backend-server-category",
+    "version": 1,
+    "urls": ["/category"],
+    "cacheConfig": {
+      "maxSize": 100,
+      "maxAge": "7d",
+      "strategy": "performance"
+  }
+  },
+  {"name": "backend-server-product",
+    "version": 1,
+    "urls": ["/product"],
+    "cacheConfig": {
+      "maxSize": 100,
+      "maxAge": "7d",
+      "strategy": "performance"
+  }
+  },
+  {
+    "name": "backend-server-taxRate",
+    "version": 1,
+    "urls": ["/taxrate/currentTaxRate"],
+    "cacheConfig": {
+      "maxSize": 100,
+      "maxAge": "7d",
+      "strategy": "performance"
+    }
+  },
+  {
+    "name": "backend-server-tables",
+    "version": 1,
+    "urls": ["/table"],
+    "cacheConfig": {
+      "maxAge": "1d",
+      "maxSize": 100,
+      "strategy": "freshness",
+      "timeout": "5s"
+    }
+  }
+  ]
+}

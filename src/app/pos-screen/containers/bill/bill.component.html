@@ -12,5 +12,5 @@
 [total]="billFacade.getBillTotal$()">
 </app-bill-footer>
 <mat-divider></mat-divider>
-<app-bill-option (onStoreOrCashClicked)="saveBill($event)"></app-bill-option>
+<app-bill-option [linesState]="billFacade.getLinesState$()" (onStoreOrCashClicked)="saveBill($event)"></app-bill-option>
 </div>

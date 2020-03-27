@@ -75,8 +75,31 @@ app-bill-option{
   ##Screen = B/w 320px to 479px
 */
 @media (min-width: 0px) and (max-width: 480px) {
-  .main-container{
-        border:2px red dashed 
- }
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        border:1px black solid;
+        overflow-y: auto;
+        height: 50vh;
+    }   
+    /* .main-container{
+        height:60vh
+    } */
+    app-bill-header{
+        flex:0
+    }
+    app-bill-body{
+        overflow: auto;
+        flex:2;
+        /* height: 25vh; */
+        border:1px yellow solid
+    }
+    app-bill-footer{
+        flex:0.5
+    }
+    app-bill-option{
+        flex:0.5
+    }
+    
     
 }

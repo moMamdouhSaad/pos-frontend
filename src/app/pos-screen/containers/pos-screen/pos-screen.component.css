@@ -62,7 +62,6 @@ app-items-categories{
 app-bill{
     /* visibility: hidden; */
     flex:1;
-    border:2px green dashed;
 }
 app-items-categories{
     flex:1;
@@ -75,5 +74,18 @@ app-items-categories{
 */
 @media (min-width: 0px) and (max-width: 480px) {
  
-     
+    .main-container{
+        display: flex;
+        height: 100%;
+        flex-direction: column-reverse;
+    } 
+   
+
+app-bill{
+    /* visibility: hidden; */
+    flex:1;
+}
+app-items-categories{
+    flex:1;
+}    
 }

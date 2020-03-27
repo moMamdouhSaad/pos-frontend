@@ -40,7 +40,10 @@ export class ItemsState{
       addItem(addedItem: Item){
         const items = this.items$.getValue();
         this.items$.next([...items, addedItem])
-
       }
+      removeItem(itemRemoved: Item){
+        const items = this.items$.getValue();
+        this.items$.next(items.filter(item => item !== itemRemoved))
+    }
 
 }

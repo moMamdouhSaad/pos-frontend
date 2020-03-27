@@ -5,13 +5,16 @@ import { CategoriesAndItemsStateService } from './state/categories-and-items-sta
 import { Observable } from 'rxjs';
 import { Category } from '../models/category';
 import { Item } from '../models/item';
+import { ErrorHandlerService } from '../core/error-handler.service';
 
 @Injectable({
     providedIn:"root" //TODO : provide posScreenModule
 })
 
 export class CategoriesAndItemsFacade{
-    constructor(private categoryAndItemsApi:CategoriesAndItemsApiService,private posScreenState:CategoriesAndItemsStateService){}
+    constructor(private categoryAndItemsApi:CategoriesAndItemsApiService,private posScreenState:CategoriesAndItemsStateService,
+       private errHandlerService: ErrorHandlerService
+        ){}
 
     loadCategories(){
         return this.categoryAndItemsApi.getAllCategories().pipe(
@@ -21,7 +24,9 @@ export class CategoriesAndItemsFacade{
             }),
             tap(categories=>{
                this.posScreenState.setCategories(categories)})
-                ).subscribe(); 
+                ).subscribe(()=>{},err=>{
+                    this.errHandlerService.showDialog();
+                }); 
     }
      getCategories$():Observable<Category[]>{
          return this.posScreenState.getCategories$();

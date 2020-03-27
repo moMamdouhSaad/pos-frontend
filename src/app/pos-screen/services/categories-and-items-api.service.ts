@@ -10,8 +10,8 @@ import { ItemsResponse } from 'src/app/models/item';
 
 export class CategoriesAndItemsApiService {
 
-  readonly categoryAPI = 'http://localhost:5000/api/category/';
-  readonly productAPI = 'http://localhost:5000/api/product/';
+  readonly categoryAPI = 'http://192.168.1.3:80/api/category/';
+  readonly productAPI = 'http://192.168.1.3:80/api/product/';
 
   constructor(private http :HttpClient) { }
 

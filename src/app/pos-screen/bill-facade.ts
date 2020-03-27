@@ -5,6 +5,7 @@ import { tap, map, flatMap, concatMap, filter } from "rxjs/operators"
 import { BillModel } from './models/Bill-model';
 import { ServerResponse } from '../models/ServerResponse';
 import { Customer } from '../models/customer';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -90,5 +91,10 @@ billItems = [];
     getCustomerInfo$(){
         return this.billState.getCustomerInfo$()
     }
-
+    setLineState(value: boolean){
+        this.billState.setLinesState(value)
+    }
+    getLinesState$():Observable<boolean>{
+        return this.billState.getLinesState$();
+    }
 }

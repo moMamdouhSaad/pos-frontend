@@ -3,13 +3,15 @@ import { TableApi } from '../api/table-api';
 import { tap,map } from 'rxjs/operators';
 import { TableState } from '../states/table-state';
 import { BillFacade } from 'src/app/pos-screen/bill-facade';
+import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 
 @Injectable({
     providedIn:"root"
 })
 
 export class TableFacade{
-    constructor(private tableApi:TableApi, private tableState:TableState, private billFacade:BillFacade){}
+    constructor(private tableApi:TableApi, private tableState:TableState, private billFacade:BillFacade,
+        private errHandlerService: ErrorHandlerService){}
 
     loadAllTables(){
       return this.tableApi.getAllTables().pipe(map(x=>x.response),
@@ -17,7 +19,9 @@ export class TableFacade{
       tap(tables=>{
         this.tableState.setAllTablesStates(tables)
     }
-        )).subscribe();
+        )).subscribe(()=>{},err=>{
+            this.errHandlerService.showDialog();
+        });
   }  
 
   getAllTables$(){

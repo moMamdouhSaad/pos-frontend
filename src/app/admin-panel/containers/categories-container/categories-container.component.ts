@@ -14,7 +14,7 @@ export class CategoriesContainerComponent implements OnInit {
   constructor(public categoriesFacade: CategoriesFacade, public dialog: MatDialog) { }
 
   ngOnInit() {
-    // this.categoriesFacade.getCategories$().subscribe(data=>console.log(data))
+    this.categoriesFacade.loadCategories();
   }
 
   savedEditedCategory($event){
@@ -30,8 +30,11 @@ export class CategoriesContainerComponent implements OnInit {
     dialogRef.componentInstance.onSave.subscribe((data: Category)=>{
       this.categoriesFacade.addCategory(data).subscribe(data=>{         
         console.log(data)
+      },err=>{
+        this.categoriesFacade.removeCategory(data)
+        this.categoriesFacade.errHandlerService.showDialog();
+
       })
-      console.log(data)
     })
   } 
 }

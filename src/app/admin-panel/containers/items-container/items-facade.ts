@@ -5,14 +5,16 @@ import { ItemsState } from './items-state';
 import { Category } from 'src/app/models/category';
 import { Observable } from 'rxjs';
 import { Item } from 'src/app/models/item';
+import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 
 @Injectable({providedIn:"root"})
 
 export class ItemsFacade{
 
-    constructor(private itemsApi: ItemCategoriesApi, private itemsState: ItemsState){
-        this.loadCategories();
-        this.loadProducts();
+    constructor(private itemsApi: ItemCategoriesApi, private itemsState: ItemsState ,
+        public errHandlerService: ErrorHandlerService){
+        // this.loadCategories();
+        // this.loadProducts();
         // this.getItemsByCategory$().subscribe(data=>console.log(data))
     }
 loadCategories(){
@@ -23,7 +25,9 @@ loadCategories(){
             }),
             tap(categories=>{
                this.itemsState.setCategories(categories)})
-                ).subscribe(); 
+                ).subscribe(()=>{},err=>{
+                    this.errHandlerService.showDialog();
+                });
     }
 
 getCategories$():Observable<Category[]>{
@@ -68,4 +72,8 @@ addNewItem(item: Item){
     this.itemsState.addItem(item)
     return this.itemsApi.addNewItem(item)
 }
+removeItem(item: Item){
+    this.itemsState.removeItem(item)
+}
+
 }

@@ -4,6 +4,7 @@ import { CategoriesState } from './categories-state';
 import { map, tap } from 'rxjs/operators';
 import { Category } from 'src/app/models/category';
 import { Observable } from 'rxjs';
+import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 
 
 
@@ -11,8 +12,8 @@ import { Observable } from 'rxjs';
 
 export class CategoriesFacade{
 
-    constructor(private categoriesApi: ItemCategoriesApi, private categoriesState: CategoriesState){
-        this.loadCategories();
+    constructor(private categoriesApi: ItemCategoriesApi, private categoriesState: CategoriesState,
+        public errHandlerService: ErrorHandlerService){
     }
 
     loadCategories(){
@@ -23,7 +24,9 @@ export class CategoriesFacade{
             }),
             tap(categories=>{
                this.categoriesState.setCategories(categories)})
-                ).subscribe(); 
+                ).subscribe(()=>{},err=>{
+                    this.errHandlerService.showDialog();
+                });
     }
 
     getCategories$():Observable<Category[]>{
@@ -38,5 +41,8 @@ export class CategoriesFacade{
     addCategory(category: Category){
         this.categoriesState.addNewCategory(category)
         return this.categoriesApi.addNewCategory(category)
+    }
+    removeCategory(categoryRemoved: Category){
+        this.categoriesState.removeCategory(categoryRemoved)
     }
 }

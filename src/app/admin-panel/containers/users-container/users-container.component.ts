@@ -15,9 +15,7 @@ export class UsersContainerComponent implements OnInit {
   constructor(public userFacade: UsersFacade, public dialog : MatDialog) { }
 
   ngOnInit() {
-    this.userFacade.getAllUsers$().subscribe(data=>{
-      console.log(data)
-    })
+    this.userFacade.loadUsers();
   }
 
 
@@ -28,8 +26,12 @@ export class UsersContainerComponent implements OnInit {
      dialogRef.componentInstance.onSave.subscribe((data: User)=>{
        this.userFacade.addUser(data).subscribe(data=>{         
          console.log(data)
+       },
+       err=>{
+        this.userFacade.errHandlerService.showDialog();
+        this.userFacade.removeUser(data)
        })
-       console.log(data)
+      
      })
  
   }

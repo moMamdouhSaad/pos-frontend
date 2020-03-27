@@ -13,13 +13,13 @@
 }
 
 .item-flex{
-    flex : 5
+    flex: 5
 }
 .qty-flex{
-    flex:2
+    flex: 2
 }
 .total-flex{
-flex:2
+    flex: 2
 }
 
 
@@ -30,7 +30,7 @@ flex:2
 .main-container{
     display: flex;
     flex-direction: column;
-    height: 47vh;
+    height: 49vh;
     overflow-y: auto;
     
 }

@@ -13,7 +13,7 @@ export class BillStateService {
   private billSubTotal$ = new BehaviorSubject<number>(0);
   private billTotal$ = new BehaviorSubject<number>(0);
   private customerInfo = new BehaviorSubject<any>(null);
-
+  private linesIsEmpty = new BehaviorSubject<any>(null);
 
   constructor() { }
 
@@ -88,5 +88,11 @@ export class BillStateService {
    }
    getCustomerInfo$(){
      return this.customerInfo.asObservable();
+   }
+   setLinesState(value: boolean){
+     this.linesIsEmpty.next(value)
+   }
+   getLinesState$():Observable<boolean>{
+     return this.linesIsEmpty.asObservable();
    }
 }

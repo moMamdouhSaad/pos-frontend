@@ -1,7 +1,10 @@
 .main-container{
     padding:40px;
     overflow: hidden;
-    height: 100%;
+}
+.user-list-container{
+    height:80vh;
+    overflow-y: auto;
 }
 
 .box-container{

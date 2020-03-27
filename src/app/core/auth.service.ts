@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  readonly authAPI = 'http://localhost:5000/auth';
+  readonly authAPI = 'http://192.168.1.3:80/auth';
 
   constructor(private http: HttpClient) { }
 

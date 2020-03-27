@@ -11,6 +11,8 @@ import { DineInModule } from './dine-in/dine-in.module';
 import { DeliveryModule } from './delivery/delivery.module';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -30,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     TakeawayModule,
     DineInModule,
     DeliveryModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

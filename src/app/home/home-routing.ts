@@ -6,7 +6,11 @@ const homeRoutes : Routes = [
   {
     path: 'home',
     component: HomePageComponent
-  } 
+  } ,
+  {
+    path:'',
+    component: HomePageComponent
+  }
 ]
 
 @NgModule({

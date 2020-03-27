@@ -9,10 +9,11 @@
         class="option-btn col-3" style="background-color: grey;color:white">Cancel</button>
         <button (click)="saveBill('Stored')"
          mat-flat-button
-        [disabled]="isBtnDisabled"
-        class="option-btn col-3" style="background-color: red;color:white">Store</button>
+         [disabled]=" linesState | async "
+         class="option-btn col-3" color="warn">Store</button>
         <button (click)="saveBill('Cashed')"
-        [disabled]="isBtnDisabled"
+        [disabled]=" linesState | async "
+        
          mat-flat-button  class="option-btn col-6" color="primary">Cash</button>
     <!-- </div> -->
 </div>

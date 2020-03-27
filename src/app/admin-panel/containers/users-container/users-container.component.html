@@ -1,11 +1,15 @@
 <div class="main-container">
-   <div>
+    <div>
     <span>Edit user</span>
     <button (click)="openAddUserDialog()" mat-button style="float:right"> Add User </button>
     </div>
+    <br>
+<div class="user-list-container">
+
 <br>
     <app-users-list
     (savedEditedUser)="updateUser($event)"
     [userList]="userFacade.getAllUsers$()"></app-users-list>
     
+</div>
 </div>

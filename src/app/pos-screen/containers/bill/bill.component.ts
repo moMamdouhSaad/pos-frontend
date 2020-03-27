@@ -1,11 +1,12 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { BillFacade } from '../../bill-facade';
 import { Observable, pipe, BehaviorSubject, Subject } from 'rxjs';
-import { map, exhaust, share, filter, takeUntil } from 'rxjs/operators';
+import { map, exhaust, share, filter, takeUntil, tap } from 'rxjs/operators';
 import { BillModel } from '../../models/Bill-model';
 import { ServerResponse } from 'src/app/models/ServerResponse';
 import { Router } from '@angular/router';
 import { Customer } from 'src/app/models/customer';
+import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 
 @Component({
   selector: 'app-bill',
@@ -17,12 +18,22 @@ export class BillComponent implements OnInit, OnDestroy {
   cashedBill:BillModel;
   sendBillToServer = new BehaviorSubject<any>(null);
   _destroy = new Subject();
-  constructor(public billFacade:BillFacade,private router:Router) { }
+  constructor(public billFacade: BillFacade,private router: Router, public errHandlerService: ErrorHandlerService) { }
 
   ngOnInit() {
-    this.billFacade.getCustomerInfo$().pipe(takeUntil(this._destroy)).subscribe(data=>console.log(data))
+    this.billFacade.getCustomerInfo$().pipe(takeUntil(this._destroy)).subscribe(data=>console.log(data));
+    this.billFacade.getBillItems$().pipe(takeUntil(this._destroy)).subscribe(data=>{
+      //determine if there is a lines in bill or not
+      // to hide an show cash and store btns
+      if(data){
+        this.billFacade.setLineState(false)
+        return
+      }
+      this.billFacade.setLineState(true)
+    })
   }
   saveBill(billStatus:string){
+      this.billFacade.setLineState(true) // to hide cash btn when cash clicked
       let orderType: string;
       let lines: any;
       let subTotal: number;
@@ -37,33 +48,22 @@ export class BillComponent implements OnInit, OnDestroy {
       this.billFacade.getBillTotal$().pipe(takeUntil(this._destroy)).subscribe(data=>total = data);
       this.billFacade.getTableNumber$().pipe(takeUntil(this._destroy)).subscribe(data=>tableNo = data)
       this.billFacade.getBillItems$().pipe(takeUntil(this._destroy)).pipe(
-        filter(data=>data!=null),
-        map((data:any)=>{
-        return data.map(a=>{
-          if(a){
-            return {
+      filter(data=>data!=null),map((data:any)=>{return data.map(a=>{if(a){return {
               product:a.product_id,
               qty:1,
-              total:a.product_price
-            } 
-          }
-            
-            })
-        }
-      ))
-      .subscribe(data=>{
-        lines = data})
-
+              total:a.product_price }}})})).subscribe(data=>{lines = data})
 let sentBillObject :BillModel = {bill_status:billStatus,bill_type:orderType,lines:lines,subtotal:subTotal,
-  tax_rate:taxRate,total:total,table_number:tableNo,customerInfo:customerInfo};
-        console.log(sentBillObject)
-this.billFacade.cashBill(sentBillObject).subscribe((data:ServerResponse)=>{
-  if(data.success == true){
-    this.router.navigate(["/"])
-    this.billFacade.resetBillStates()
-  }
-})
-console.log(customerInfo)
+tax_rate:taxRate,total:total,table_number:tableNo,customerInfo:customerInfo};
+    this.billFacade.cashBill(sentBillObject).pipe(tap(data=>console.log("clicked"))).subscribe((data:ServerResponse)=>{
+      if(data.success == true){
+        this.router.navigate(["/"])
+        this.billFacade.resetBillStates()
+      }
+    },err=>{
+      console.log("err in connection with server")
+      this.errHandlerService.showDialog();
+    })
+    
   }
 
 

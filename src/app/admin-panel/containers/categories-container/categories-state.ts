@@ -23,6 +23,9 @@ export class CategoriesState{
         const categories = this.categories$.getValue();
         this.categories$.next([...categories,category])
     }
-      
+    removeCategory(categoryRemoved: Category){
+        const categories = this.categories$.getValue();
+        this.categories$.next(categories.filter(category => category !== categoryRemoved))
+    }  
 
 }
