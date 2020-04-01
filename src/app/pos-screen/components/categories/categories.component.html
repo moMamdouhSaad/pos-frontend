@@ -1,9 +1,10 @@
 
 <div class="main-container">
     <button *ngFor="let category of categories$ | async" (click)="categoryClicked(category._id)"
-    class="category-btn"    mat-flat-button
+        mat-flat-button
     [ngStyle]="{'background-color':(selectedCategory$ | async)  == category._id?'red':'black'}"
-    style="color:white">
+    style="color:white"
+    >
     {{category.category_name}}
    </button>
 </div>

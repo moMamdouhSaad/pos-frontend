@@ -27,7 +27,10 @@ export class CustomerFormComponent implements OnInit {
     this.customerFormGroup.get('customerPhone').valueChanges.pipe(debounceTime(300),
    switchMap(val=>this.deliveryFacade.search(val))
    ).subscribe(data=>{
-    console.log(data)})
+    console.log(data)
+  },err=>{
+    this.deliveryFacade.errHandlerService.showDialog();
+  })
 
     this.filteredCustomers = this.customerFormGroup.get('customerPhone').valueChanges.pipe(debounceTime(300),
     switchMap(val=>this.deliveryFacade.search(val)),map((x:any)=>x.response)

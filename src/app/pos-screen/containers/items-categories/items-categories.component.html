@@ -4,13 +4,13 @@
         [categories]="categoriesAndItemsFacade.getCategories$()"
         [selectedCategory]="categoriesAndItemsFacade.getSelectedCategory$()"
         (onCategoryClicked)=categoriesAndItemsFacade.getProductsByCategoryId($event)
-          style="border:1px black dashed">
+          >
          </app-categories>
 
         <app-items 
         [products]="categoriesAndItemsFacade.getCurrentProducts$()"
         (onItemClicked) = "itemClicked($event)"
-         style="border:1px blue dashed">
+        >
         </app-items>
     <!-- </div> -->
 </div>

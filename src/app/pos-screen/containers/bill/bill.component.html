@@ -1,16 +1,24 @@
 
 <div class="main-container">
+<div class="bill-header-container">
 <app-bill-header [orderType]="billFacade.getOrderType$()" [tableNo]="billFacade.getTableNumber$()"></app-bill-header>
+</div>
 <mat-divider></mat-divider>
-<app-bill-body 
-[billItems]="billFacade.getBillItems$()">
-</app-bill-body>
+<div class="app-bill-body-container">
+    <app-bill-body 
+    [billItems]="billFacade.getBillItems$()">
+    </app-bill-body>
+</div>
 <mat-divider></mat-divider>
+<div class="app-bill-footer-container">
 <app-bill-footer 
 [subTotal]="billFacade.getBillSubTotal$()"
 [taxRate]="billFacade.getTaxRate$()"
 [total]="billFacade.getBillTotal$()">
 </app-bill-footer>
+</div>
 <mat-divider></mat-divider>
+<div class="app-bill-option-container">
 <app-bill-option [linesState]="billFacade.getLinesState$()" (onStoreOrCashClicked)="saveBill($event)"></app-bill-option>
+</div>
 </div>

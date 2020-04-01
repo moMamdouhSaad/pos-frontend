@@ -1,91 +1,131 @@
-.container-fluid{
-    background-color: rgba(255, 255, 255, 0.568);
-    margin-top:10px;
-}
-.pos-screen-container{
-    height: 100%;
-}
-
-.main-container{
-    display: flex;
-    height: 100%;
-}
-app-bill{
-    flex:1
-}
-app-items-categories{
-    flex:4
-}
-
-
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-    app-bill{
-        flex:2
-    }
-    app-items-categories{
-        flex:4
-    }
-           
-}
-
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-@media (min-width: 768px) and (max-width: 1300px) and (orientation: landscape) {
-  
-    app-bill{
-        flex:2
-    }
-    app-items-categories{
-        flex:4
-    }
-}
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-@media (min-width: 481px) and (max-width: 767px) {
+@media(min-width:100px) and (max-width:576px){
     .main-container{
         display: flex;
-        height: 100%;
         flex-direction: column-reverse;
-    } 
-   
+        height: 100%;
+        align-items: center;
 
-app-bill{
-    /* visibility: hidden; */
-    flex:1;
-}
-app-items-categories{
-    flex:1;
+    }
+    .bill-container{
+        min-width: 100%;
+        flex: 2;
+        height: 0;
+        overflow-y: auto;
+    }
+    .categories-items-container{
+        min-width: 100%;
+        flex: 1;
+        min-height: 0;
+        border: 2px green dashed;
+        overflow: hidden;
+
+    }
 }
 
-}
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-@media (min-width: 0px) and (max-width: 480px) {
- 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
     .main-container{
         display: flex;
-        height: 100%;
         flex-direction: column-reverse;
-    } 
-   
+        height: 100%;
+        border:1px black solid;
+        align-items: center;
 
-app-bill{
-    /* visibility: hidden; */
-    flex:1;
-}
-app-items-categories{
-    flex:1;
-}    
-}
+    }
+    .bill-container{
+        min-width: 100%;
+        flex: 2;
+        height: 0;
+        overflow-y: auto;
+        border:1px red solid;
+    }
+    .categories-items-container{
+        min-width: 100%;
+        flex: 1;
+        min-height: 0;
+        border: 2px blue dashed;
+        overflow: hidden;
+        width:100%
+
+    }
+  }
+
+/*  Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width:992px) {
+    .main-container{
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        border:1px black solid;
+        /* align-items: center; */
+
+    }
+    .bill-container{
+        flex: 2;
+        height: 100%;
+        overflow-y: auto;
+        border:1px red solid;
+    }
+    .categories-items-container{
+        flex: 4;
+        min-height: 0;
+        border: 2px green dashed;
+        overflow: hidden;
+        width:100%
+
+    }
+
+  }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width:1200px) {
+    .main-container{
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        border:1px black solid;
+        /* align-items: center; */
+
+    }
+    .bill-container{
+        flex: 2;
+        height: 100%;
+        overflow-y: auto;
+        border:1px red solid;
+    }
+    .categories-items-container{
+        flex: 4;
+        min-height: 0;
+        border: 2px green dashed;
+        overflow: hidden;
+        width:100%
+
+    }
+
+  }
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .main-container{
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        border:1px black solid;
+        /* align-items: center; */
+
+    }
+    .bill-container{
+        flex: 1;
+        height: 100%;
+        overflow-y: auto;
+        border:1px red solid;
+    }
+    .categories-items-container{
+        flex: 4;
+        min-height: 0;
+        border: 2px green dashed;
+        overflow: hidden;
+        width:100%
+
+    }
+  }

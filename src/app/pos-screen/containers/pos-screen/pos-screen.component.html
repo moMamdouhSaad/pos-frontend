@@ -1,7 +1,15 @@
 
-<div class="main-container">
+<div class="container-fluid h-100 ">
     <!-- <div class="row pos-screen-container"> -->
+
+        <div class=" main-container">
+
+        <div class=" bill-container ">
         <app-bill></app-bill>
-        <app-items-categories (onItemClicked)="billFacade.addItemToBill($event)" ></app-items-categories>
+        </div>
+        <div class=" categories-items-container">
+            <app-items-categories (onItemClicked)="billFacade.addItemToBill($event)" ></app-items-categories>
+        </div>
+    </div>
     <!-- </div> -->
 </div>

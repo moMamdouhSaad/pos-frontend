@@ -3,11 +3,16 @@
 
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-html, body { height: 100%;}
+html, body { height: 100vh;overflow: hidden;}
 body {
      margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
      background-color: rgb(235, 235, 235);
     }
 button:focus {outline:0 !important;}
-
+button{
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    text-overflow: ellipsis !important;
+}
 

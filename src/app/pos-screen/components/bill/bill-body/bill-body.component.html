@@ -1,16 +1,14 @@
 
 <div class="main-container">
-    <div class="header-items">
-        <div class="item-flex"> Item </div>
-        <div class="qty-flex"> Q </div>
-        <div class="total-flex"> T</div>
+    <div class="header-items-container">
+        <div class="header-item"> Item </div>
+        <div class="header-item"> Q </div>
+        <div class="header-item"> T</div>
     </div>
-    <div class="body-items">
-<ng-container *ngFor = " let item of billItems$ | async  ">
+<div  class="app-bill-body-item" *ngFor = " let item of billItems$ | async  ">
     <app-bill-body-item [item]="item">
     </app-bill-body-item>
-</ng-container>
-    </div>
+</div>
     <!-- <div class="row bottom col-sm-12" >
         <button class="col-6" (click)="downBtnClicked()" mat-flat-button>Down</button>
         <button class="col-6" (click)="upBtnClicked()"  mat-flat-button>UP</button>

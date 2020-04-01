@@ -1,105 +1,171 @@
-.main-container{
-    display: flex;
-    flex-direction: column;
-    border:1px black solid;
-    overflow-y: auto;
-    height: 87vh;
-}
-/* app-bill-header{
-    border:1px black solid;
-    flex:2
-}
-app-bill-body{
-    flex:4
-}
-app-bill-footer{
-    flex:2
-}
-app-bill-option{
-    flex:1
-} */
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-       
-}
-
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
-  
-}
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-@media (min-width: 481px) and (max-width: 767px) {
+@media(min-width:100px) and (max-width:576px){
     .main-container{
-        display: flex;
+        display:flex;
         flex-direction: column;
-        border:1px black solid;
-        overflow-y: auto;
-        height: 50vh;
-    }   
-    /* .main-container{
-        height:60vh
-    } */
-    app-bill-header{
-        flex:0
+        border: 2px red dashed;
+        height: 100%;
+        width: 100%;
+        min-height: 0;
+        
+    }  
+    .bill-header-container{
+        /* flex:1; */
     }
-    app-bill-body{
-        overflow: auto;
-        flex:2;
-        /* height: 25vh; */
-        border:1px yellow solid
-    }
-    app-bill-footer{
-        flex:0.5
-    }
-    app-bill-option{
-        flex:0.5
-    }
-    
-  
-}
+    .app-bill-body-container{
+        flex:3;
+        height: max-content;
 
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-@media (min-width: 0px) and (max-width: 480px) {
-    .main-container{
-        display: flex;
-        flex-direction: column;
-        border:1px black solid;
-        overflow-y: auto;
-        height: 50vh;
-    }   
-    /* .main-container{
-        height:60vh
-    } */
-    app-bill-header{
-        flex:0
-    }
-    app-bill-body{
         overflow: auto;
-        flex:2;
-        /* height: 25vh; */
-        border:1px yellow solid
+        border: 2px green dashed;
     }
-    app-bill-footer{
-        flex:0.5
+    .app-bill-footer-container{
+        /* flex:2; */
+        overflow: auto;
+        border: 2px green dashed;
     }
-    app-bill-option{
-        flex:0.5
+    .app-bill-option-container{
+        /* flex:1; */
+        overflow: auto;
+        border: 2px green dashed;
     }
-    
-    
+
 }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .main-container{
+        display:flex;
+        flex-direction: column;
+        border: 2px blue dashed;
+        height: 100%;
+        width: 100%;
+        min-height: 0;
+        
+    }  
+    .bill-header-container{
+        /* flex:1; */
+    }
+    .app-bill-body-container{
+        flex:3;
+        height: max-content;
+        overflow: auto;
+        border: 2px green dashed;
+    }
+    .app-bill-footer-container{
+        /* flex:0; */
+        overflow: auto;
+        border: 2px yellow dashed;
+    }
+    .app-bill-option-container{
+        flex:1;
+        overflow: auto;
+        border: 2px green dashed;
+    }
+ }
+
+/*  Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width:992px) { 
+    .main-container{
+        display:flex;
+        flex-direction: column;
+        border: 2px blue dashed;
+        height: 100%;
+        width: 100%;
+        min-height: 0;
+        /* align-items: stretch; */
+
+        
+    }  
+    .bill-header-container{
+        /* flex:0.5; */
+    overflow: auto;
+    }
+    .app-bill-body-container{
+        flex:3;
+        /* height: max-content; */
+        flex-basis: 0;
+        overflow: auto;
+        border: 2px rgb(0, 5, 0) dashed;
+    }
+    .app-bill-footer-container{
+        /* flex:1; */
+        overflow: auto;
+        border: 2px yellow dashed;
+    }
+    .app-bill-option-container{
+        flex:0.5;
+        overflow: auto;
+        border: 2px green dashed;
+    }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .main-container{
+        display:flex;
+        flex-direction: column;
+        border: 2px blue dashed;
+        height: 100%;
+        width: 100%;
+        min-height: 0;
+        /* align-items: stretch; */
+
+        
+    }  
+    .bill-header-container{
+    /* flex:0.5; */
+    overflow: auto;
+    }
+    .app-bill-body-container{
+        flex:3;
+        /* height: max-content; */
+        flex-basis: 0;
+        overflow: auto;
+        border: 2px rgb(0, 5, 0) dashed;
+    }
+    .app-bill-footer-container{
+        /* flex:1; */
+        overflow: auto;
+        border: 2px green dashed;
+    }
+    .app-bill-option-container{
+        flex:0.5;
+        overflow: auto;
+        border: 2px green dashed;
+    }
+  }
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .main-container{
+        display:flex;
+        flex-direction: column;
+        border: 2px blue dashed;
+        height: 100%;
+        width: 100%;
+        min-height: 0;
+        /* align-items: stretch; */
+
+        
+    }  
+    .bill-header-container{
+    /* flex:0.5; */
+    overflow: auto;
+    }
+    .app-bill-body-container{
+        flex:3;
+        /* height: max-content; */
+        flex-basis: 0;
+        overflow: auto;
+        border: 2px rgb(0, 5, 0) dashed;
+    }
+    .app-bill-footer-container{
+        /* flex:1; */
+        overflow: auto;
+        border: 2px green dashed;
+    }
+    .app-bill-option-container{
+        flex:0.3;
+        overflow: auto;
+        border: 2px green dashed;
+    }
+ }

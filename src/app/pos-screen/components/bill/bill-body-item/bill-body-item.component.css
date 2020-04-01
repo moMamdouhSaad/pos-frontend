@@ -1,16 +1,114 @@
-.main-container{
-    display: flex;
-    flex-direction: row;
-}
+@media(min-width:100px) and (max-width:576px){
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
 
-.item-name{
-    flex:2;
-   
-}
+    .body-items-container{
+        display: flex;
+        flex-direction: row;
+    }
+    .body-items:nth-child(1){
+        flex:2
+    }
+    .body-items:nth-child(2){
+        flex:1
+    }
+    .body-items:nth-child(3){
+        flex:1
+    }
 
-.item-qty{
-    flex:1;
 }
-.item-price{
-    flex:1;
-}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width:768px)  {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .body-items-container{
+        display: flex;
+        flex-direction: row;
+    }
+    .body-items:nth-child(1){
+        flex:2
+    }
+    .body-items:nth-child(2){
+        flex:1
+    }
+    .body-items:nth-child(3){
+        flex:1
+    }
+ }
+
+/*  Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width:992px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        /* overflow-y: auto; */
+    }
+
+    .body-items-container{
+        display: flex;
+        flex-direction: row;
+    }
+    .body-items:nth-child(1){
+        flex:2
+    }
+    .body-items:nth-child(2){
+        flex:1
+    }
+    .body-items:nth-child(3){
+        flex:1
+    }
+
+  }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width:1200px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        /* overflow-y: auto; */
+    }
+
+    .body-items-container{
+        display: flex;
+        flex-direction: row;
+    }
+    .body-items:nth-child(1){
+        flex:2
+    }
+    .body-items:nth-child(2){
+        flex:1
+    }
+    .body-items:nth-child(3){
+        flex:1
+    }
+  }
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        /* overflow-y: auto; */
+    }
+
+    .body-items-container{
+        display: flex;
+        flex-direction: row;
+    }
+    .body-items:nth-child(1){
+        flex:2
+    }
+    .body-items:nth-child(2){
+        flex:1
+    }
+    .body-items:nth-child(3){
+        flex:1
+    }
+  }

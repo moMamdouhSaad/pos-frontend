@@ -1,81 +1,101 @@
-.item-btn{
-    background-color: rgba(33, 122, 33, 0.959);
-    color:white;
-    margin-right:5px;
-    margin-bottom:3px;
-    width:calc(25% - 5px);
-    height:50px
-}
-
-.item-btns-container{
-    padding:5px
-}
-.main-container{
-    display: flex;
-    flex-wrap: wrap;
-    /* box-sizing: border-box; */
-    /* flex: 1 0 21%; explanation below */
-    margin: 5px;
-    justify-content: center;
-    height:  95%;
-    overflow: auto;
-    align-content: flex-start
-
-}
-.main-container button{
-    /* height: 50%; */
-    white-space: normal;
-    word-wrap: break-word;
-
-    width:22%;
-    margin:5px;
-    height: 75px;
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-       
-}
-
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
-    
-}
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-@media (min-width: 481px) and (max-width: 767px) {
+@media(min-width:100px) and (max-width:576px){
     .main-container{
         display: flex;
         flex-wrap: wrap;
         box-sizing: border-box;
-        /* flex: 1 0 21%; explanation below */
         margin: 5px;
         height: 20vh;
-        border:2px red dashed;
         overflow: scroll; 
         justify-content: center;
     }
+    
     .main-container button{
         height:50%;
         width:25%;
         margin:5px;
-    } 
+    }
+  }
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) and (max-width: 768px)  {
+    .main-container{
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin: 5px;
+        height: 20vh;
+        overflow: scroll; 
+        justify-content: center;
+    }
+    
+    .main-container button{
+        height:50%;
+        width:25%;
+        margin:5px;
+    }
+   }
+  
+  /*  Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) and (max-width:992px) {
+    .main-container{
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin: 5px;
+        height: 100%;
+        overflow: scroll; 
+        justify-content: center;
+        align-content: flex-start; /* Add this*/
 
+    }
+    
+    .main-container button{
+        height:10%;
+        width:20%;
+        margin:5px;
+    }
+        }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) and (max-width:1200px) {
+    .main-container{
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin: 5px;
+        height: 100%;
+        overflow: scroll; 
+        justify-content: center;
+        align-content: flex-start; /* Add this*/
 
-}
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-@media (min-width: 0px) and (max-width: 480px) {
- 
-     
-}
+    }
+    
+    .main-container button{
+        height:10%;
+        width:20%;
+        margin:5px;
+    }
+    }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .main-container{
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin: 5px;
+        height: 100%;
+        overflow: scroll; 
+        justify-content: center;
+        align-content: flex-start; /* Add this*/
+
+    }
+    
+    .main-container button{
+        height:10%;
+        width:20%;
+        margin:5px;
+    }
+
+    }
+  
 

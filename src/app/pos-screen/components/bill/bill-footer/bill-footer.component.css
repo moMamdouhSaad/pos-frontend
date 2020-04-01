@@ -1,28 +1,71 @@
-.container-fluid{
-    height:90px;
-}
-.main-container{
-    display: flex;
-    flex-direction: column;
-    height:15vh;
-    overflow-y: auto;
-
-}
-.item{
-    display: flex;
-    flex-direction: row;
-}
-
-
-
-@media (min-width: 481px) and (max-width: 767px) {
+@media(min-width:100px) and (max-width:576px){
     .main-container{
         display: flex;
         flex-direction: column;
         height:15vh;
-        overflow: auto;
-        /* height: 100px; */
+        overflow-y: auto;
+    }
+    .item{
+        display: flex;
+        flex-direction: row;
     }
     
-  
 }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width:768px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        height:15vh;
+        overflow-y: auto;
+    }
+    .item{
+        display: flex;
+        flex-direction: row;
+    }
+ }
+
+/*  Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        /* height:15vh; */
+        overflow-y: auto;
+    }
+    .item{
+        display: flex;
+        flex-direction: row;
+    }
+  }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width:1200px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        /* height:15vh; */
+        overflow-y: auto;
+    }
+    .item{
+        display: flex;
+        flex-direction: row;
+    }
+  }
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        /* height:15vh; */
+        overflow-y: auto;
+    }
+    .item{
+        display: flex;
+        flex-direction: row;
+    }
+  }
+
+
+
