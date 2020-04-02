@@ -66,6 +66,16 @@
       "strategy": "freshness",
       "timeout": "5s"
     }
+  },
+  {
+    "name": "backend-server-users",
+    "version": 1,
+    "urls": ["/user"],
+    "cacheConfig": {
+      "maxSize": 100,
+      "maxAge": "7d",
+      "strategy": "performance"
   }
+}
   ]
 }

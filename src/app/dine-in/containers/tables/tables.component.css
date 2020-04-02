@@ -4,7 +4,10 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    height: 100%;
+    height: 88vh;
+    overflow-y: auto;
+    border:solid 2px #41403E;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
 app-table-btn {

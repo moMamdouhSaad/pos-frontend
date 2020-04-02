@@ -33,7 +33,6 @@ app-categories{
   .main-container{
     display:flex;
     flex-direction: row;
-    border:1px orange dashed;
     height: 100%;
     overflow: hidden;
 }  
@@ -43,7 +42,6 @@ app-categories{
 }
 app-items{
 flex:5;
-border:1px black dashed
 }
   }
 
@@ -52,7 +50,6 @@ border:1px black dashed
   .main-container{
     display:flex;
     flex-direction: row;
-    border:1px orange dashed;
     height: 100%;
     overflow: hidden;
 }  
@@ -62,7 +59,6 @@ app-categories{
 }
 app-items{
 flex:5;
-border:1px black dashed
 }
   }
 
@@ -71,7 +67,6 @@ border:1px black dashed
   .main-container{
     display:flex;
     flex-direction: row;
-    border:1px orange dashed;
     height: 100%;
     overflow: hidden;
 }  
@@ -81,6 +76,5 @@ app-categories{
 }
 app-items{
 flex:5;
-border:1px black dashed
 }
  }

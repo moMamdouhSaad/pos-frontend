@@ -5,7 +5,7 @@ import { User } from 'src/app/models/user';
 
 @Injectable({providedIn:"root"})
 export class UsersApi{
-    readonly userAPI = 'http://localhost:80/api/user/';
+    readonly userAPI = 'http://192.168.1.10:80/api/user/';
     constructor(private http: HttpClient){}
 
     getAllUsers():Observable<any>{

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({providedIn:"root"})
 
 export class TablesApi{
-readonly tableAPI = 'http://localhost:80/api/table/';
+readonly tableAPI = 'http://192.168.1.10:80/api/table/';
 constructor(private http: HttpClient){}
 
 addTables(numsOfTables: number):Observable<any>{

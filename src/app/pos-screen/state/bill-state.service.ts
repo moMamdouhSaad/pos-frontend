@@ -28,8 +28,11 @@ export class BillStateService {
  
    } 
    setBillItems(items:any){
-    const itemsFiltered = items.map(x=>x.product);
+if(items){
+  var itemsFiltered = items.map(x=>x.product);
+  }
     this.billItems$.next(itemsFiltered)
+
    }
 
    getBillItems$(){

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class TableApi{
-    readonly tableAPI = 'http://localhost:80/api/table';
+    readonly tableAPI = 'http://192.168.1.10:80/api/table';
     constructor(private http:HttpClient){}
 
     getAllTables():Observable<any>{

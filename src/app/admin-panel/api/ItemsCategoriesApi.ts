@@ -8,8 +8,8 @@ import { ItemsResponse, Item } from 'src/app/models/item';
 @Injectable({"providedIn":"root"})
 
 export class ItemCategoriesApi{
-    readonly categoryAPI = 'http://localhost:80/api/category/';
-    readonly itemAPI = 'http://localhost:80/api/product/';
+    readonly categoryAPI = 'http://192.168.1.10:80/api/category/';
+    readonly itemAPI = 'http://192.168.1.10:80/api/product/';
 
     constructor(private http :HttpClient) { }
 

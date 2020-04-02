@@ -11,8 +11,8 @@ import { ServerResponse } from 'src/app/models/ServerResponse';
 
 export class BillApi{
     constructor(private http:HttpClient){}
-    readonly taxRateAPI = 'http://localhost:80/api/taxrate';
-    readonly billAPI = 'http://localhost:80/api/bill';
+    readonly taxRateAPI = 'http://192.168.1.10:80/api/taxrate';
+    readonly billAPI = 'http://192.168.1.10:80/api/bill';
 
     getTaxRate():Observable<any>{
         return this.http.get<any>(`${this.taxRateAPI}/currentTaxRate`);

@@ -84,7 +84,7 @@
         box-sizing: border-box;
         margin: 5px;
         height: 100%;
-        overflow: scroll; 
+        overflow-y: auto; 
         justify-content: center;
         align-content: flex-start; /* Add this*/
 
